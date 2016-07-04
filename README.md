@@ -1,10 +1,15 @@
 #Jiayi's Blog
 ###[View Live Jiayi's Blog &rarr;](http://Jiayi666.github.io)
+This Blog is based on Hux's open source Jekyll mode "huxpro.github.io"
 
 ##Functions for each file / director.
 ###[File] _config.yml
 
 In "_config.yml" file, basic information about the Bloger can be set.
+
+###[File] about.html
+
+Be careful that all the website structure related fetures are set within ".html" files, this file is used to set contents of "About" button.
 
 ###[Dir] portfolio
 
