@@ -19,6 +19,9 @@ In root directory, index.html file only used to set the structure of Posts displ
 
 "tags.html" in root directory sets content of "TAGS" button.
 
+###[File] foot.html
+"in the _layout directory, foot.html file" can be used to complete the "contact me" function.
+
 ###[Dir] portfolio
 
 In the portfolio directory, the index.html arranged the structure of a brifcase.
