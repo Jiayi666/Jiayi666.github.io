@@ -2,7 +2,7 @@
 layout:     post
 title:      "Fix conflicts in Git push"
 subtitle:   "especially when local branch is behind"
-date:       2016-07-05	17:10:00
+date:       2016-07-05
 author:     "Jiayi.Liu"
 header-img: "img/post-bg-2015.jpg"
 catalog: 	False
