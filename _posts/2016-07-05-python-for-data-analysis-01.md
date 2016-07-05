@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "Python for data analysis 01"
-subtitle:   "Python basics & Scientific purpose"
+title:      "Python Language Essentials"
+subtitle:   "Python for data analysis - Appendix"
 date:       2016-07-05
 author:     "Jiayi.Liu"
 header-img: "img/post-bg-2015.jpg"
@@ -46,3 +46,43 @@ According to Riley's theory, what's matters isn't what is an object but how this
 *	Although Python is pass-by-reference, functions like `list(x)` always creat **a new list**. So for statement `a is not list(a)`, the return is `True`.
 
 ## Scalar Types
+
+#### Numerical Types
+
+*	The size of interger can be sorted as **int** is dependent on operation system (32bits/64bits)
+*	Python will automatically convert a very large interger into **long** type, which can store arbitrarily large intergers.
+*	In python3, interger division not resulting in a whole number will yield a floating point number, but in python27, things are different, unless you put `from __future__ import division` at the begining of your module.
+*	In python a string object with backslash '\' is different with print(), which will treat backslash as escape mark.
+*	**templating and formatting string** can use the `%` mark
+<pre>
+		In [1]: template = '%.2f %s are worth $%d'
+		In [2]: template % (4.5560, 'Argentine Pesos', 1)
+		Out[2]: '4.56 Argentine Pesos are worth $1'
+</pre>
+*	Boolean values are combined with the **and** and **or** keywords.
+*	The build-in Python module `datetime` provides `datetime`, `date`, and `time` type, and **each type can have an instantiation**.
+
+## Exception Handling
+
+*	Using exception handling method, we can **supress typical exceptions and do something no matter exceptions raised or not**.
+
+<pre>
+		f = open(path, 'w')
+		
+		try:
+			write_to_file(f)
+		except (TypeError, ValueError):
+			print 'Failed'
+		else:
+			print 'succeeded'
+		finally:
+			f.close()
+</pre>
+
+## Little Tricks
+
+*	Easy way to build tuples:
+<pre> 
+		In [2]: 1, 2
+		Out[2]: (1, 2)
+</pre>
