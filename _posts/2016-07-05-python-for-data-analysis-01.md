@@ -31,7 +31,8 @@ As related concepts, pass-by-value and pass-by-reference are always talked togat
 *	There is no `type` attribute for references / variable names in Python. However python has been considered as a strong type programming language, because it's strict type-converting rules.We can use `isinstance()` function to check the type of a variable.
 *	IPython has brilliant completion function, using `a.<Tab>` IPython will display all the possible completion (here are methods of object a refers to). Note that I didn't say "output" but "display", because using `<Tab>` is only for a hint, IPython won't interrupt your work.
 *	**"Duck" typing**
-	>" When I see a bird that walks like a duck and swims like a duck and quacks like a duck, I call that bird a duck."  ---- James Whitcomb Riley
+
+> " When I see a bird that walks like a duck and swims like a duck and quacks like a duck, I call that bird a duck."  ---- James Whitcomb Riley
 
 According to Riley's theory, what's matters isn't what is an object but how this object can be used. Code like this can be used to check if an object is iterable, if it is not, we can use function like `x = list(x)` to convert it to be one.
 <pre>
