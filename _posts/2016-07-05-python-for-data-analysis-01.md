@@ -36,11 +36,11 @@ As related concepts, pass-by-value and pass-by-reference are always talked togat
 According to Riley's theory, what's matters isn't what is an object but how this object can be used. Code like this can be used to check if an object is iterable, if it is not, we can use function like `x = list(x)` to convert it to be one.
 <pre>
     def isiterable(obj):
-	    try:
-		    iter(ogj)	
-		    return True
-		except TypeError: #not iterable
-			return False
+	  try:
+	    iter(ogj)	
+	    return True
+	  except TypeError: #not iterable
+		return False
 </pre>
 *	Import a module will bring it's name space unless it is imported directlyl.
 *	Although Python is pass-by-reference, functions like `list(x)` always creat **a new list**. So for statement `a is not list(a)`, the return is `True`.
@@ -70,13 +70,13 @@ According to Riley's theory, what's matters isn't what is an object but how this
 		f = open(path, 'w')
 		
 		try:
-			write_to_file(f)
+		  write_to_file(f)
 		except (TypeError, ValueError):
-			print 'Failed'
+		  print 'Failed'
 		else:
-			print 'succeeded'
+		  print 'succeeded'
 		finally:
-			f.close()
+		  f.close()
 </pre>
 
 ## Little Tricks
