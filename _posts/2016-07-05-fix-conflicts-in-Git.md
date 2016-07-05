@@ -43,4 +43,4 @@ The only thing we need to do is **edit the conflicted file again**, once we made
 		|/
 		* fec145a branch test
 		...
-</pre>
+</pre>  
