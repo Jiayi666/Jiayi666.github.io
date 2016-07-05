@@ -20,7 +20,10 @@ In root directory, index.html file only used to set the structure of Posts displ
 "tags.html" in root directory sets content of "TAGS" button.
 
 ###[File] foot.html
-"in the _layout directory, foot.html file" can be used to complete the "contact me" function.
+"in the _include directory, footer.html file" is used to set the footer of every page, include the 知乎，微博，github，facebook等连接（footer部分）.
+
+###[File] page.html
+"in the _layout directory, page.html file" 是用来设置整个页面通用功能的文件，其中也有设置知乎，微博等的位置。
 
 ###[Dir] portfolio
 
