@@ -127,7 +127,7 @@ According to Riley's theory, what's matters isn't what is an object but how this
 			everything.extend(chunk)
 </pre>
 
-**here I need Figure A-2 in page 411**
+**here I need Figure A-2 in page 411   **
 
 ### Built-in Sequence Functions
 
