@@ -20,11 +20,11 @@ tags:
 *	**Everything is an object**, which means we should treat everything in Python as a black box and just use the port it offeres.
 *	**Pass by reference!** When assign a variable with another variable, they will be different references to the same object.
 <pre>
-	   In[1]: a = [1,2,3]  
-	   In[2]: b = a  
-	   In[3]: a.append(4)  
-	   In[4]: b  
-	   Out[4]: [1, 2, 3, 4]  
+		In[1]: a = [1,2,3]  
+		In[2]: b = a  
+		In[3]: a.append(4)  
+		In[4]: b  
+		Out[4]: [1, 2, 3, 4]  
 </pre>
 As related concepts, pass-by-value and pass-by-reference are always talked togather, so it is very important for programmer to understand the difference between those two terms. Pass-by-value will **cause the duplication of an object** while pass-by-reference will only **add a new reference to an existed object**. 
 
@@ -35,12 +35,12 @@ As related concepts, pass-by-value and pass-by-reference are always talked togat
 
 According to Riley's theory, what's matters isn't what is an object but how this object can be used. Code like this can be used to check if an object is iterable, if it is not, we can use function like `x = list(x)` to convert it to be one.
 <pre>
-    def isiterable(obj):
-	  try:
-	    iter(ogj)	
-	    return True
-	  except TypeError: #not iterable
-		return False
+	    def isiterable(obj):
+		  try:
+		    iter(ogj)	
+		    return True
+		  except TypeError: #not iterable
+			return False
 </pre>
 *	Import a module will bring it's name space unless it is imported directlyl.
 *	Although Python is pass-by-reference, functions like `list(x)` always creat **a new list**. So for statement `a is not list(a)`, the return is `True`.
@@ -62,7 +62,7 @@ According to Riley's theory, what's matters isn't what is an object but how this
 *	Boolean values are combined with the **and** and **or** keywords.
 *	The build-in Python module `datetime` provides `datetime`, `date`, and `time` type, and **each type can have an instantiation**.
 
-## Exception Handling
+#### Exception Handling
 
 *	Using exception handling method, we can **supress typical exceptions and do something no matter exceptions raised or not**.
 
@@ -79,10 +79,66 @@ According to Riley's theory, what's matters isn't what is an object but how this
 		  f.close()
 </pre>
 
-## Little Tricks
+#### range and xrange
 
+*	range(start, end, step) will produce a list (in Python3, range also produce an iterator, no need for xrange)
+*	xrange(start, end, step) will produce an iterator
+
+#### Ternary Expressions
+
+*	a ternary expression combines an if-else block to a single line.
+
+<pre>
+		value = true-expr if condition else false-expr
+</pre>
+
+## Data Structures and Sequences
+
+### Tuple
+
+*	The size and content of tuples cannot be modified, they can only be changed by instamce methods.
 *	Easy way to build tuples:
 <pre> 
 		In [2]: 1, 2
 		Out[2]: (1, 2)
 </pre>
+
+*	Tuples can be contatenated using the + operator
+<pre>
+		In [2]: (4, None, 'foo') + (6, 0) + ('bar',)
+		Out[2]: (4, None, 'foo', 6, 0, 'bar')
+</pre>
+
+*	Unpacking Tuples (see "Easy way to build tuples")
+<pre>
+		seq = [(1, 2, 3), (4, 5, 6)]
+		for a, b, c in seq:
+			pass
+</pre>
+
+### List
+
+*	Lists and tuples are semantically similar as one-dimensional sequences of objects and thus can be used interchangeably in many functions.
+*	In python, the start of a sequence is marked with 0, such as list[0].
+*	Lists can be concatenated by using + operator and .extend or .append methods. Note that using + operator is manipulated two objects at the same time, and a new list must be build, which is a very expensive operation. Thus, using extend to append elements to an existing list is usually preferable.
+<pre>
+		everything = []
+		for chunk in list_of_lists:
+			everything.extend(chunk)
+</pre>
+
+**here I need Figure A-2 in page 411**
+
+### Built-in Sequence Functions
+
+*	These functions **aren't methods** for certen data structures, they are useable for all sequences in Python, they used like **enumerate(list/tuple/string)**.
+*	**enumerate** will help you keep track of the index of the current item during iteration.
+*	**sorted** returns a new sorted **list** from the elements of any sequences.
+*	**zip** pairs up the elements of a number of lists, tuples or sequences to create a list of tuples.
+<pre>
+		In [1]: seq1 = ('baz', 'bar', 'foo')
+		In [2]: seq2 = (1, 2, 3)
+		In [3]: zip(seq1, seq2)
+		Out[3]: [('baz', 1), ('bar', 2), ('foo', 3)]
+</pre>
+
