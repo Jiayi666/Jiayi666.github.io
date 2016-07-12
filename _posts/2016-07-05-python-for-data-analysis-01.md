@@ -251,5 +251,28 @@ When you write `func(a, b, c, d=some, e=value)`, the positional and keyword argu
 		e = kwargs.get('e', e_default_value)
 </pre>
 
+#### Currying: Partial Argument Application
 
+<pre>	
+		def add_numbers(x, y):
+			return x+y
 
+		add_five = lambda y: add_number(y, 5)
+</pre>
+
+#### Generators
+
+A generator is a easy way to construct a iterable object. While normal functions execute and return a single value, generators return a sequence of value **lazily**. To creat a generator, use the `yield` keyword instead of `return` in a function.
+
+<pre>
+		def squares(n=10)
+			for i in xrange(1, n+1)
+				print 'Generating squares from 1 to %d' % (n**2)
+				yield i**2
+
+		In [1]: gen = squares()
+		In [2]: for x in gen:
+					print x
+		Out[2]: Generating squares from 1 to 10
+				1 4 9 16 25 36 49 64 81 100
+</pre>
