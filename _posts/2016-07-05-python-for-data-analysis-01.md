@@ -77,16 +77,23 @@ According to Riley's theory, what's matters isn't what is an object but how this
 		finally:
 		  f.close()
 </pre>
+
 #### range and xrange
+
 *	range(start, end, step) will produce a list (in Python3, range also produce an iterator, no need for xrange)
 *	xrange(start, end, step) will produce an iterator
+
 #### Ternary Expressions
+
 *	a ternary expression combines an if-else block to a single line.
 <pre>
 		value = true-expr if condition else false-expr
 </pre>
+
 ## Data Structures and Sequences
+
 #### Tuple
+
 *	The size and content of tuples cannot be modified, they can only be changed by instamce methods.
 *	Easy way to build tuples:
 <pre> 
@@ -104,7 +111,9 @@ According to Riley's theory, what's matters isn't what is an object but how this
 		for a, b, c in seq:
 			pass
 </pre>
+
 #### List
+
 *	Lists and tuples are semantically similar as one-dimensional sequences of objects and thus can be used interchangeably in many functions.
 *	In python, the start of a sequence is marked with 0, such as list[0].
 *	Lists can be concatenated by using + operator and .extend or .append methods. Note that using + operator is manipulated two objects at the same time, and a new list must be build, which is a very expensive operation. Thus, using extend to append elements to an existing list is usually preferable.
@@ -114,7 +123,10 @@ According to Riley's theory, what's matters isn't what is an object but how this
 			everything.extend(chunk)
 </pre>
 *	In python, sequences as list and tuple can be sliced using the index operator `[]`. Keep an eye on the negative index.
+
+
 ![img](/img/in-post/Python-slice.bmp)
+
 *	A **step** can also be used after a second colon to **take every other element**:
 <pre>
 		In [2]: seq = [7, 2, 3, 7, 5, 6, 0, 1]
@@ -128,7 +140,9 @@ In the upper example, `seq[::2]` will **choose every two index start from 0**.
 		Out[3]: [1, 0, 6, 5, 7, 3, 2, 7]
 </pre>
 This is an easy way to reverse a list or a tuple.
+
 #### Built-in Sequence Functions
+
 *	These functions **aren't methods** for certen data structures, they are useable for all sequences in Python, they used like **enumerate(list/tuple/string)**.
 *	**enumerate** will help you keep track of the index of the current item during iteration.
 *	**sorted** returns a new sorted **list** from the elements of any sequences.
