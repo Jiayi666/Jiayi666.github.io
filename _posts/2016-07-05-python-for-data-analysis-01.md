@@ -184,6 +184,7 @@ This is an easy way to reverse a list or a tuple.
 They have the basic form:
 
 		`[exor for val in collection if condition]`
+
 **keep an eye on the square brace which stand for list (output).**
 <pre>
 		In [2]: strings = ['a', 'bat', 'bb', 'cat']
@@ -202,3 +203,53 @@ In dict and set comprehension, the square braces has been changed with curly bra
 		In [4]: loc_mapping
 		Out[4]: {'a':0, 'bat':1, 'bb':2, 'cat':3}
 </pre>
+
+## Functions
+
+#### Functions are objects
+
+Since functions are objects, you can **use functions as arguments to other functions**.
+
+<pre>
+		clean_ops = [str.strip, str.title]
+		
+		def clean_strings(strings, ops):
+			result = []
+			for value in strings:
+				for function in ops:
+					value = function(value)
+				result.append(value)
+			return result
+</pre>
+
+#### Anonymous (lambda) functions
+
+Lambda functions are created using keyword `lambda` and **a single statement**, it has the basic form:
+
+		`lambda [variable list] : expression`
+
+The following two ways of defining functions are equal.
+<pre>
+		def short_fuctions(x, y)
+			return x+y
+
+		short_functions = lambda x, y: x+y
+</pre>
+
+#### Closures (闭包): Functions that return Functions
+
+The key property of closure is that thet returned function still has access to the variables in the local namespace where it was created. 
+
+In practice, we can use this attribute to keep track of what we have done before or use closure as a general mode to formating more specific functions. 
+
+#### Extended Call Syntax with *args, **kwargs
+
+When you write `func(a, b, c, d=some, e=value)`, the positional and keyword arguments are actually packed up into a tuple and dict, respectively **(positional → tuple; keyword → dict)**. So the internal function receives a tuple `args` and a dict `kwargs` and internally does the equivalent of:
+<pre>
+		a, b, c = args
+		d = kwargs.get('d', d_default_value)
+		e = kwargs.get('e', e_default_value)
+</pre>
+
+
+
