@@ -124,7 +124,6 @@ According to Riley's theory, what's matters isn't what is an object but how this
 </pre>
 *	In python, sequences as list and tuple can be sliced using the index operator `[]`. Keep an eye on the negative index.
 
-
 ![img](/img/in-post/Python-slice.bmp)
 
 *	A **step** can also be used after a second colon to **take every other element**:
@@ -152,4 +151,54 @@ This is an easy way to reverse a list or a tuple.
 		In [2]: seq2 = (1, 2, 3)
 		In [3]: zip(seq1, seq2)
 		Out[3]: [('baz', 1), ('bar', 2), ('foo', 3)]
+</pre>
+*	**reversed** itrates over the elements of a sequence in reversed order (**`reversed()`returns an iterator**)
+<pre>
+		In [2]: reversed(range(10))
+		Out[2]: < listreverseiterator at 0x3988390>
+		In [3]: list(reversed(range(10)))
+		Out[3]: [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+</pre>
+
+#### Dict
+
+> Dict is essentially a collection of 2-tuples.
+
+*	Using `dict[key] =` syntax as access to insert or set elements in a dict.
+*	You can check if a key is using in a dict using `'key' in dict` which is similar to check if a value is in a list or tuple `value in list/tuple`
+*	Merge two dict use `dict.update(another_dict)` method.
+*	Build a dict using two lists/tuples: `dict1 = dict(zip(range(5), reversed(range(5))))` 
+*	Using `dict.pop(key)` to delete elements in a dict, or you can use `del dict[key]` to do the same thing.
+
+#### Set
+
+*	Set can be build using **dict only keys** and `set()` function.
+*	Sets in python can do all the set-related mathematical operations `| & ^` etc.
+*	Set have `issubset(), issuperset(), isdisjoint()` methods. And all the set operations can be accomplished by using methods like `a.union(b)`.
+
+#### List, set, and Dict Comprehensions
+
+*	List comprehension
+> *List comprehensions* are one of the most loved Python-language features. They allow you to concisely **form a new list** by filtering the elements of a collection and trnsforming the elements passing the filter in on conscise expression.
+
+They have the basic form:
+
+		`[exor for val in collection if condition]`
+**keep an eye on the square brace which stand for list (output).**
+<pre>
+		In [2]: strings = ['a', 'bat', 'bb', 'cat']
+		In [3]: [x.upper() for x in strings if len(x) > 2]
+		Out[3]: ['BAT', 'CAT']
+</pre>
+*	Dict and Set comprehension
+
+		`{key-expr : val-expr for val in collection if condition}`	
+		`{expr for val in collection if condition}`
+
+In dict and set comprehension, the square braces has been changed with curly braces, and dict comprehension need two expressions.
+<pre>
+		In [2]: strings = ['a', 'bat', 'bb', 'cat']
+		In [3]: loc_mapping = {val : index for index, val in enumerate(strings)}
+		In [4]: loc_mapping
+		Out[4]: {'a':0, 'bat':1, 'bb':2, 'cat':3}
 </pre>
