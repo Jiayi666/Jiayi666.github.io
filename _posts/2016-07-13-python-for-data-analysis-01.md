@@ -2,7 +2,7 @@
 layout:     post
 title:      "Python Language Essentials"
 subtitle:   "Python for data analysis - Appendix"
-date:       2016-07-05
+date:       2016-07-13
 author:     "Jiayi.Liu"
 header-img: "img/post-bg-2015.jpg"
 catalog: 	true
@@ -262,7 +262,7 @@ When you write `func(a, b, c, d=some, e=value)`, the positional and keyword argu
 
 #### Generators
 
-A generator is a easy way to construct a iterable object. While normal functions execute and return a single value, generators return a sequence of value **lazily**. To creat a generator, use the `yield` keyword instead of `return` in a function.
+A generator is a easy way to construct a iterable object. While normal functions execute and return a single value, generators return a sequence of value **lazily**. To creat a generator, use the `yield` keyword instead of `return` in a function (note that `yield` should be used **within** the `for` loop).
 
 <pre>
 		def squares(n=10)
@@ -271,8 +271,16 @@ A generator is a easy way to construct a iterable object. While normal functions
 				yield i**2
 
 		In [1]: gen = squares()
-		In [2]: for x in gen:
+
+		In [2]: gen
+		Out[2]: < generator object squares at 0x34c8280>
+
+		In [3]: for x in gen:
 					print x
-		Out[2]: Generating squares from 1 to 10
+		Out[3]: Generating squares from 1 to 10
 				1 4 9 16 25 36 49 64 81 100
 </pre>
+
+As the upper example shows, what has been yield from the `squares()` function is a iterator containing all the numbers produced **after the `yield` keyword** (within the for loop). 
+
+Generator 与 return 的区别在于`yield`不会打断程序的运行，但还是**每次运行到`yield`的时候才会产生iterator中的一个元素**.
