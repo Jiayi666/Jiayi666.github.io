@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "IPython An Interactive Computing Environment"
-subtitle:   "Python for data analysis - Appendix"
+subtitle:   "Python for data analysis - Chapter03"
 date:       2016-07-14
 author:     "Jiayi.Liu"
 header-img: "img/post-bg-2015.jpg"
