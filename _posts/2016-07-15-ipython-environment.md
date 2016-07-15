@@ -103,7 +103,7 @@ Compared with `%time`, `%timeit` provide automatically loop to test the best per
 #### Profiling
 
 *	When developing high performance calculating program, it's important to have a global view of **how much time was cost by each function**, here you need profiling.
-*	In IPython, `%run -p` and `%prun` magic function are used to display the profiling:
+*	In IPython, `%run -p` and `%prun` magic function are used to display the profiling.
 
 <pre>
 		In [572]: %prun add_and_sum(x, y)
