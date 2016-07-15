@@ -112,7 +112,7 @@ Compared with `%time`, `%timeit` provide automatically loop to test the best per
 			ncalls tottime percall cumtime percall filename:lineno(function)
 			1 0.036 0.036 0.046 0.046 prof_mod.py:3(add_and_sum)
 			1 0.009 0.009 0.009 0.009 {method 'sum' of 'numpy.ndarray' objects}
-			1 0.003 0.003 0.049 0.049 <string>:1(<module>)
+			1 0.003 0.003 0.049 0.049 < string>:1(< module>)
 </pre>
 
 
