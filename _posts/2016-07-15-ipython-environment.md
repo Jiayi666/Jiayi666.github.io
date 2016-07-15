@@ -2,7 +2,7 @@
 layout:     post
 title:      "IPython An Interactive Computing Environment"
 subtitle:   "Python for data analysis - Chapter03"
-date:       2016-07-14
+date:       2016-07-15
 author:     "Jiayi.Liu"
 header-img: "img/post-bg-2015.jpg"
 catalog: 	true
@@ -88,3 +88,82 @@ In [6]: %bookmark default /jiayiliu/ipython_default_directoryIn
 
 #### Timing Code
 
+*	IPython has two magic functions %time and %timeit to automatically calculate the time for statement after them.
+<pre>
+		In [561]: %time method1 = [x for x in strings if x.startswith('foo')]
+		CPU times: user 0.19 s, sys: 0.00 s, total: 0.19 s
+		Wall time: 0.19 s
+
+		In [563]: %timeit [x for x in strings if x.startswith('foo')]
+		10 loops, best of 3: 159 ms per loop
+</pre>
+
+Compared with `%time`, `%timeit` provide automatically loop to test the best performance for that statement.
+
+#### Profiling
+
+*	When developing high performance calculating program, it's important to have a global view of **how much time was cost by each function**, here you need profiling.
+*	In IPython, `%run -p` and `%prun` magic function are used to display the profiling:
+
+<pre>
+		In [572]: %prun add_and_sum(x, y)
+				4 function calls in 0.049 seconds
+			Ordered by: internal time
+			ncalls tottime percall cumtime percall filename:lineno(function)
+				1 0.036 0.036 0.046 0.046 prof_mod.py:3(add_and_sum)
+				1 0.009 0.009 0.009 0.009 {method 'sum' of 'numpy.ndarray' objects}
+				1 0.003 0.003 0.049 0.049 <string>:1(<module>)
+				1 0.000 0.000 0.000 0.000 {method 'disable' of '_lsprof.Profiler' objects}
+</pre>
+
+*	However, as the upper code shows, it's inconvenient to analyse your code when all the functions agregated. So, IPython offers a **profiling by line** function `%lprun`.
+
+<pre>
+		In [573]: %lprun -f add_and_sum add_and_sum(x, y)
+		Timer unit: 1e-06 s
+		File: book_scripts/prof_mod.py
+		Function: add_and_sum at line 3
+		Total time: 0.045936 s
+		Line # Hits Time Per Hit % Time Line Contents
+		==============================================================
+			3				def add_and_sum(x, y):
+			4 	1 	36510	36510.0	79.5	added = x + y
+			5 	1 	9425	9425.0 	20.5	summed = added.sum(axis=1)
+			6 	1 	1	1.0	0.0	return summed
+</pre>
+
+*	We also can use `In [574]: %lprun -f add_and_sum -f call_function call_function()` like statement to run two functions at the same time.
+
+#### Tips for Productive Code Development
+
+*	Python has a **load once** module system, where in the same **session**, the same module will only be loaded once, even if you've made changes to that module.
+*	For this problem, IPython has a special dreload function (not a magic function) for “deep” (recursive) reloading of modules. If I were to run `import some_lib` then type `dreload(some_lib)`, it will attempt to reload some_lib as well as all of its **dependencies**. This will not work in all cases, unfortunately, but when it does it beats having to restart IPython.
+
+#### Make your own class IPython-friendly
+
+*	In IPython, the built-in function `pprint` is designed to make elegent printing of basic data structures like tuple and list. But when it comes to your own class, it may won't work well 
+
+<pre>
+		class Message:
+			def __init__(self, msg):
+			self.msg = msg
+
+		In [576]: x = Message('I have a secret')
+		In [577]: x
+		Out[577]: <__main__.Message instance at 0x60ebbd8>
+</pre>
+
+And the way to solve this is using the `__repr__` magic method and **print that to the concle**.
+
+<pre>
+		class Message:
+			def __init__(self, msg):
+			self.msg = msg
+
+			def __repr__(self):
+			return 'Message: %s' % self.msg
+
+		In [579]: x = Message('I have a secret')
+		In [580]: x
+		Out[580]: Message: I have a secret
+</pre>
