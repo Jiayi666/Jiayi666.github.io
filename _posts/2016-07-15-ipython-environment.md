@@ -114,7 +114,9 @@ Compared with `%time`, `%timeit` provide automatically loop to test the best per
 			1 0.009 0.009 0.009 0.009 {method 'sum' of 'numpy.ndarray' objects}
 			1 0.003 0.003 0.049 0.049 <string>:1(<module>)
 			1 0.000 0.000 0.000 0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
 </pre>
+
 
 *	However, as the upper code shows, it's inconvenient to analyse your code when all the functions agregated. So, IPython offers a **profiling by line** function `%lprun`.
 
@@ -126,10 +128,10 @@ Compared with `%time`, `%timeit` provide automatically loop to test the best per
 		Total time: 0.045936 s
 		Line # Hits Time Per Hit % Time Line Contents
 		==============================================================
-		3 			    def add_and_sum(x, y):
-		4 1 36510 36510.0 79.5 		added = x + y
-		5 1 9425 9425.0 20.5 		summed = added.sum(axis=1)
-		6 1 1 1.0 0.0 			return summed
+		     3 			    	def add_and_sum(x, y):
+		     4  1   36510  36510.0 79.5     added = x + y
+		     5  1    9425   9425.0 20.5     summed = added.sum(axis=1)
+		     6  1       1      1.0  0.0     return summed
 </pre>
 
 *	We also can use `In [574]: %lprun -f add_and_sum -f call_function call_function()` like statement to run two functions at the same time.
