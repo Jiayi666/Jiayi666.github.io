@@ -83,5 +83,8 @@ In [6]: %bookmark default /jiayiliu/ipython_default_directoryIn
 
 *	Executing the %pdb command makes it so that IPython automatically invokes the debugger after any exception, a mode that many users will find especially useful.
 *	Note that **debugger commands take precedence over variable names**; in such cases preface the variables with `!` to examine their contents.
-*	Setting `set_trace()` and `debug()` functions in IPython profile can save a lot of time. You can check the book "Python for data analysis" chapter 03 page 66 about how to set them.
+*	Setting `set_trace()` and `debug()` functions in IPython profile can save a lot of time. While `set_trace()` can set breakpoint when you are writing codes, `debug()` can check the function invoking. You can check the book "Python for data analysis" chapter 03 page 66 about how to set them.
 *	Using `%run -d` can directly switch into debug mode when you want to execute a py file.
+
+#### Timing Code
+
