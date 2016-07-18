@@ -5,7 +5,7 @@ subtitle:   "小波与小波变换导论-Ch01"
 date:       2016-07-18
 author:     "Jiayi.Liu"
 header-img: "img/post-bg-2015.jpg"
-catalog: 	true
+catalog: 	false
 tags:
     - 小波分析
 ---
