@@ -124,7 +124,7 @@ According to Riley's theory, what's matters isn't what is an object but how this
 </pre>
 *	In python, sequences as list and tuple can be sliced using the index operator `[]`. Keep an eye on the negative index.
 
-![img](/img/in-post/Python-slice.bmp)
+![img](/img/in-post/Python/Python-slice.bmp)
 
 *	A **step** can also be used after a second colon to **take every other element**:
 <pre>
