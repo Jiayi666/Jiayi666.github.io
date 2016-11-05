@@ -2,7 +2,7 @@
 layout:     post
 title:      "Linux software installation"
 subtitle:   "method to solve some commonly meet problems"
-date:       2016-11-94
+date:       2016-11-04
 author:     "Jiayi.Liu"
 header-img: "img/post-bg-2015.jpg"
 catalog: 	False
