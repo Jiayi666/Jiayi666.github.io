@@ -5,7 +5,7 @@ subtitle:   "method to solve some commonly meet problems"
 date:       2016-11-04
 author:     "Jiayi.Liu"
 header-img: "img/post-bg-2015.jpg"
-catalog: 	False
+catalog: 	True
 tags:
     - linux
 ---
