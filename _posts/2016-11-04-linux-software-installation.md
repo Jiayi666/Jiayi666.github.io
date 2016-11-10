@@ -20,10 +20,17 @@ tags:
 #### Packages can't be reached
 一般来说，直接报错无法找到或安装`package`或`dependency`都是由于当前系统的`源`出现了问题，就是说`/etc/apt/source.list`中所指示的软件包列表无法获取。这时应当检查该文件中的源是否可用，一般在中国使用163，Aliyun等[ubuntu源](https://launchpad.net/ubuntu/+archivemirrors)是没有问题的。可以直接用vim替换掉原本的`ubuntu.com`部分为`Aliyun.com`等源。
 
-#### `apt-get upgrade`卡在"0% [Connecting to security.ubuntu.com (2001:67c:1562::15)]"
-Turns out this is an issue where connecting over IPv6 on some servers causes them to get stuck at this point. The fix is really simple.
-*	Open `/etc/gai.conf`
-*	Uncomment the following line:`# precedence ::ffff:0:0/96 100`
+#### apt-get upgrade卡在`0% [Connecting to xxxxxx.com (2001:67c:1562::15)]`
+这个问题很明显是无法连接到某个源，那么从逻辑上分析有以下几个可能性：
+
+1. Turns out this is an issue where connecting over IPv6 (上述`2001:67c:1562::15`是IPV6的形式) on some servers causes them to get stuck at this point. The fix is really simple.
+<pre>
+Open `/etc/gai.conf`
+Uncomment the following line:`# precedence ::ffff:0:0/96 100`
+</pre>
+要判断是不是由于IPV6出现的问题可以使用`nslookup`方式查看出问题源`xxxxxx.com`所对应的是IPV4网络还是IPV6网络。
+2. 如果使用IPV4还无法链接源，那么可能是源服务器的问题，可以使用`ping`检测一下源链接。
+3. 观察一下出问题的源，如果该源没有出现在`/etc/apt/sources.list`文件中，那么就不是Ubuntu本身更新所用的源，如`cn.archive.ubuntu.com`。这些源石油用户所安装软件更新所需的，放置在`/etc/apt/sources.list.d`文件夹中，如果由于这里的某个软件导致不能update，可以考虑先卸载。
 
 
 This will allow you to still use IPv6 but sets IPv4 as the precedence so that apt-get won’t get stuck.
