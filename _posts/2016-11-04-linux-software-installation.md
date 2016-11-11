@@ -29,7 +29,9 @@ Open `/etc/gai.conf`
 Uncomment the following line:`# precedence ::ffff:0:0/96 100`
 </pre>
 要判断是不是由于IPV6出现的问题可以使用`nslookup`方式查看出问题源`xxxxxx.com`所对应的是IPV4网络还是IPV6网络。
+
 2. 如果使用IPV4还无法链接源，那么可能是源服务器的问题，可以使用`ping`检测一下源链接。
+
 3. 观察一下出问题的源，如果该源没有出现在`/etc/apt/sources.list`文件中，那么就不是Ubuntu本身更新所用的源，如`cn.archive.ubuntu.com`。这些源石油用户所安装软件更新所需的，放置在`/etc/apt/sources.list.d`文件夹中，如果由于这里的某个软件导致不能update，可以考虑先卸载。
 
 
