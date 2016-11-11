@@ -40,6 +40,7 @@ This will allow you to still use IPv6 but sets IPv4 as the precedence so that ap
 
 #### 如果按照上述方法upgrade还出现错误
 可以尝试`sudo apt-get dist-upgrade`进行更新。
+
 *	update：更新软件列表“信息”，包括版本，依赖关系；
 *	upgrade：在不改变现有设置的情况下更新软件； 
 *	dist-upgrade：会改变旧的配置文件和旧的依赖关系，比如升级系统时。
