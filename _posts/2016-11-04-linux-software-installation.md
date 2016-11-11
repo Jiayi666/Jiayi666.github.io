@@ -23,19 +23,17 @@ tags:
 #### apt-get upgrade卡在`0% [Connecting to xxxxxx.com (2001:67c:1562::15)]`
 这个问题很明显是无法连接到某个源，那么从逻辑上分析有以下几个可能性：
 
-1. Turns out this is an issue where connecting over IPv6 (上述`2001:67c:1562::15`是IPV6的形式) on some servers causes them to get stuck at this point. The fix is really simple.
+* Turns out this is an issue where connecting over IPv6 (上述`2001:67c:1562::15`是IPV6的形式) on some servers causes them to get stuck at this point. The fix is really simple.
 <pre>
 Open `/etc/gai.conf`
 Uncomment the following line:`# precedence ::ffff:0:0/96 100`
 </pre>
 要判断是不是由于IPV6出现的问题可以使用`nslookup`方式查看出问题源`xxxxxx.com`所对应的是IPV4网络还是IPV6网络。
-
-2. 如果使用IPV4还无法链接源，那么可能是源服务器的问题，可以使用`ping`检测一下源链接。
-
-3. 观察一下出问题的源，如果该源没有出现在`/etc/apt/sources.list`文件中，那么就不是Ubuntu本身更新所用的源，如`cn.archive.ubuntu.com`。这些源石油用户所安装软件更新所需的，放置在`/etc/apt/sources.list.d`文件夹中，如果由于这里的某个软件导致不能update，可以考虑先卸载。
-
-
 This will allow you to still use IPv6 but sets IPv4 as the precedence so that apt-get won’t get stuck.
+
+* 如果使用IPV4还无法链接源，那么可能是源服务器的问题，可以使用`ping`检测一下源链接。
+
+* 观察一下出问题的源，如果该源没有出现在`/etc/apt/sources.list`文件中，那么就不是Ubuntu本身更新所用的源，如`cn.archive.ubuntu.com`。这些源石油用户所安装软件更新所需的，放置在`/etc/apt/sources.list.d`文件夹中，如果由于这里的某个软件导致不能update，可以考虑先卸载。
 
 #### `install package`后提示需要dependency但是xx package没有安装
 在提示上述ERROR后可以使用`sudo apt-get -f install`来自动检测并安装上述需要的dependency，但必须要运行过上述安装命令后才能使用。
