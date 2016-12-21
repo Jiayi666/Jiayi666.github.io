@@ -33,7 +33,7 @@ This will allow you to still use IPv6 but sets IPv4 as the precedence so that ap
 
 * 如果使用IPV4还无法链接源，那么可能是源服务器的问题，可以使用`ping`检测一下源链接。
 
-* 观察一下出问题的源，如果该源没有出现在`/etc/apt/sources.list`文件中，那么就不是Ubuntu本身更新所用的源，如`cn.archive.ubuntu.com`。这些源石油用户所安装软件更新所需的，放置在`/etc/apt/sources.list.d`文件夹中，如果由于这里的某个软件导致不能update，可以考虑先卸载。
+* 观察一下出问题的源，如果该源没有出现在`/etc/apt/sources.list`文件中，那么就不是Ubuntu本身更新所用的源，如`cn.archive.ubuntu.com`。这些源是由用户所安装软件更新所需的，放置在`/etc/apt/sources.list.d`文件夹中，如果由于这里的某个软件导致不能update，可以考虑先卸载。
 
 #### `install package`后提示需要dependency但是xx package没有安装
 在提示上述ERROR后可以使用`sudo apt-get -f install`来自动检测并安装上述需要的dependency，但必须要运行过上述安装命令后才能使用。
