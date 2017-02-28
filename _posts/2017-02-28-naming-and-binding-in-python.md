@@ -35,7 +35,7 @@ tags:
 	append_element(data, 4)
 
 	print(data)
-[3,1,2,4]
+	[3,1,2,4]
 </pre>
 　　上面python对于参数的传递表现的像pass by reference，可以通过虚参改变实参object的内容。但是对于下面的情况：
 <pre>
