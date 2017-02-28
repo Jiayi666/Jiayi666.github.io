@@ -28,22 +28,22 @@ tags:
 
 　　所以说，python中对虚参的赋值就是将实参对应的object与虚参名字之间建立关联，类似于pass by reference。这里解释一下开头stackoverflow中关于参数传递的疑问，为什么：
 <pre>
-def append_element(some_list, element):
-    some_list.append(element)
+	def append_element(some_list, element):
+	    some_list.append(element)
 
-data = [3, 1, 2]
-append_element(data, 4)
+	data = [3, 1, 2]	
+	append_element(data, 4)
 
-print(data)
+	print(data)
 [3,1,2,4]
 </pre>
 　　上面python对于参数的传递表现的像pass by reference，可以通过虚参改变实参object的内容。但是对于下面的情况：
 <pre>
-def test(x):
-	return(x=x+1)
-b = test(a)
-print(a ,b)
-1 2
+	def test(x):
+		return(x=x+1)
+	b = test(a)
+	print(a ,b)
+	1 2
 </pre>
 　　上面的代码中虚参又无法改变实参，类似于pass by value。
 
