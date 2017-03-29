@@ -12,6 +12,7 @@ tags:
 
 ### Language
 *	python中没有定义'NA'，而是用'N/A'来表示数据不存在。
+*	python3中不存在`xrange`函数了，其实python3中的`range`就是python2中的`xrange`，原本的`range`被删除了，见[这里](http://stackoverflow.com/questions/15014310/why-is-there-no-xrange-function-in-python3)。另外，`range(10)`产生的是从0到9共10个数。
 
 ### print
 *	在python2中，`print`函数是不需要加括号使用的，可以直接`print x, y`，但是在python3中`print`函数必须使用括号。
@@ -34,6 +35,7 @@ tags:
 		squares = [x ** 2 for x in nums]
 		print squares   # Prints [0, 1, 4, 9, 16]
 </pre>
+*	`list.remove()`函数很有意思，是remove**元素**，而不是根据index来remove，如`x=[1,10,20]; x.remove(20)`。
 
 ### Dictionary
 *	与list不同，dict可以采用直接对新key赋值来添加新的元素，如`x={}, x['name']='jiayi'`。
@@ -45,3 +47,9 @@ tags:
 		even_num_to_square = {x: x ** 2 for x in nums if x % 2 == 0}
 		print even_num_to_square  # Prints "{0: 0, 2: 4, 4: 16}"
 </pre>
+
+### Set
+*	set虽然有和dict一样的建立符号`{}`，但其中元素的操作与list类似，set中元素的添加与删除只能通过`set.add()`与`set.remove()`函数进行。
+*	由于set是**无序**的，对set的循环往往需要得到其index，与list一样，其index也是通过`enumerate()`函数得到。
+*	所谓unordered，是指set中储存的元素**不能通过index访问**，只能用`a in set`来进行判断或者`add` or `remove`。
+*	set也有comprehension方法，与前面的大同小异。comprehension方法就是**新建了一个对象**，而这个对像是list，dict还是set完全由其新建时的**符号**如`[], {x:}, {}`决定。
