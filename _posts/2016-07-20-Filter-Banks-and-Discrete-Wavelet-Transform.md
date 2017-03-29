@@ -7,7 +7,7 @@ author:     "Jiayi.Liu"
 header-img: "img/post-bg-2015.jpg"
 catalog: 	true
 tags:
-    - 小波分析
+    - Wavelet
 ---
 
 #### 高低阶尺度系数关系

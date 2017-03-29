@@ -7,7 +7,7 @@ author:     "Jiayi.Liu"
 header-img: "img/post-bg-2015.jpg"
 catalog: 	false
 tags:
-    - 小波分析
+    - Wavelet
 ---
 
 > 傅立叶变换的主要用途在于分析“平稳的，时不变的”波信号有效**（功率受限信号）**。而对于具有在时域上集中能量的，瞬变的信号分析则采取小波作为工具**（能量首先信号）**。

@@ -7,7 +7,7 @@ author:     "Jiayi.Liu"
 header-img: "img/post-bg-2015.jpg"
 catalog: 	true
 tags:
-    - 小波分析
+    - Wavelet
 ---
 
 ## 尺度函数
