@@ -65,3 +65,19 @@ tags:
 
 　　上式中只有采用`global`关键字标注才能给身为全局变量的x**赋值**，否则只能**建立新变量x**，而外界的x对于`func`函数内部只是**read only**。
 *	与`gloabl`类似的还有`nonlocal`，不同于直接查询全局变量的global，nonlocal关键字表示从**外层（非全局）**的name scope中寻找该变量，global与nonlocal的不同可以参考[这里](http://blog.csdn.net/xijiaoda_liuhao/article/details/8788624)。
+*	对于一个class的**实例**例如`x = myClass()`，可以直接**添加data attribute**(instance variables)，类似于创建新的local varibale，例如原本的x不含有`x.a`，可以直接建立`x.a = 1`。这里需要注意instance variables和class variables的区别，instance varibales是指该class某个instance的attribute，而class variables是指被该class的所有instance所共有的attributes。
+*	所谓*class object*和*instance object*的区别在于class object是实例化之前class的定义模板，而instance object则是已经实例化的class。
+*	Class的定义过程是在一个新的**name scope**中进行的，按照name scope的规则，是可以在定义class时使用**外部变量**的，比如：
+<pre>
+		# Function defined outside the class
+		def f1(self, x, y):
+ 		    return min(x, x+y)
+		
+		class C:
+    		f = f1
+
+    		def g(self):
+        	    return 'hello world'
+
+    		h = g
+</pre>
