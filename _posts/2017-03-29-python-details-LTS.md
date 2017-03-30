@@ -53,3 +53,15 @@ tags:
 *	由于set是**无序**的，对set的循环往往需要得到其index，与list一样，其index也是通过`enumerate()`函数得到。
 *	所谓unordered，是指set中储存的元素**不能通过index访问**，只能用`a in set`来进行判断或者`add` or `remove`。
 *	set也有comprehension方法，与前面的大同小异。comprehension方法就是**新建了一个对象**，而这个对像是list，dict还是set完全由其新建时的**符号**如`[], {x:}, {}`决定。
+
+### Class
+*	在inner scope的namespace中对变量进行赋值时python优先选择**建立新name**，只有当该名字被标注为global时才会在对其赋值时直接选择对**全局**变量赋值：
+<pre>
+		x = 5
+		def func()
+			global x = 10
+			# x = 10
+</pre>
+
+　　上式中只有采用`global`关键字标注才能给身为全局变量的x**赋值**，否则只能**建立新变量x**，而外界的x对于`func`函数内部只是**read only**。
+*	与`gloabl`类似的还有`nonlocal`，不同于直接查询全局变量的global，nonlocal关键字表示从**外层（非全局）**的name scope中寻找该变量，global与nonlocal的不同可以参考[这里](http://blog.csdn.net/xijiaoda_liuhao/article/details/8788624)。
