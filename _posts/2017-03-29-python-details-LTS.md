@@ -29,12 +29,14 @@ tags:
     		print '#%d: %s' % (idx + 1, animal)
 		# Prints "#1: cat", "#2: dog", "#3: monkey", each on its own line
 </pre>
+
 *	**list comprehension**是针对**对list中的每个元素进行操作**这种情况设计的，而且一般与赋值操作一起进行。注意，list comprehension对x的操作**只能有一步**，如果需要更复杂的操作应该使用function或者lambda function，关于使用lambda function的效率问题，可以参考[这里](http://stackoverflow.com/questions/6076270/python-lambda-function-in-list-comprehensions)。
 <pre>
 		nums = [0, 1, 2, 3, 4]
 		squares = [x ** 2 for x in nums]
 		print squares   # Prints [0, 1, 4, 9, 16]
 </pre>
+
 *	`list.remove()`函数很有意思，是remove**元素**，而不是根据index来remove，如`x=[1,10,20]; x.remove(20)`。
 
 ### Dictionary
@@ -81,3 +83,6 @@ tags:
 
     		h = g
 </pre>
+
+*	A piece of Python code that expects a particular abstract data type can often be passed a *class that emulates the methods of that data type instead*. For instance, if you have a function that formats some data from a file object, you can define a class with methods `read()` and `readline()` that get the data from a string buffer instead, and pass it as an argument.
+*	`iterator`和`generator`的关系：generator是**实现**iterator的简便方法，具体做法是使用`yield`语句。iterator是指object在`for`语句中被调用的`__iter__()`方法，该方法提供了`__next__()`方法，用来迭代，但是这样需要人为编写`__next__()`方法中关于data与index的内容，比较繁琐，所以使用`yield`语句来简化这个过程。具体例子可以看[官方文档](https://docs.python.org/3.5/tutorial/classes.html#inheritance)中的9.8与9.9章节。
