@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Caffe Installation & Python Inference"
+title:      "Caffe & PyCaffe Installation"
 subtitle:   "OS X 10.12 / CPU Only / Anaconda Python"
 date:       2018-08-10
 author:     "Jiayi.Liu"
@@ -74,4 +74,8 @@ To deal with this, according to [this page](https://stackoverflow.com/questions/
 ### Import Caffe in Python
 
 * To import python, the last thing we need to do is **adding caffe to python path**. According to [this page](https://www.cnblogs.com/yizhichun/p/6339789.html), we should add to `~/.bash_profile` with `export PYTHONPATH=path_to_caffe/python:$PYTHONPATH` (Take care! Many answers says to add `path_to_caffe/python/caffe` and that won't work.)
+
+### Import opencv installed by Homebrew at python
+
+* According to [this page](http://answers.opencv.org/question/2413/problems-installing-opencv-on-mac-with-python/), the cv2.os file is stored in `/usr/local/lib/python2.7/site-packages/` and we need to add this address to PYTHONPATH.
 
