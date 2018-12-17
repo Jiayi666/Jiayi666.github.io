@@ -62,3 +62,8 @@ tags:
 &nbsp;&nbsp;&nbsp;&nbsp;In this problem, a possible **algorithm abstraction** is `search` paradigm. Once we have determined two numbers, it is a search problem for us to find the possible third number.
 
 &nbsp;&nbsp;&nbsp;&nbsp;The inspiration for algorithm abstraction is the brute force method. In this problem, because in brute force way, we need to use 3 nested loop, so it is normal to think about the most inner loop where other 2 numbers have been determined.
+
+##### Solution and think
+&nbsp;&nbsp;&nbsp;&nbsp;It is very interesting to check different solutions. Like solution [here](https://github.com/qiyuangong/leetcode/blob/master/python/015_3Sum.py) completely did what I said **use brute force as guideline and use 'math' / 'algorithm abstraction' to simplify the brute force** method.
+
+&nbsp;&nbsp;&nbsp;&nbsp;On the solution [here](https://github.com/haoel/leetcode/blob/master/algorithms/cpp/3Sum/3Sum.cpp), except for the above solution, they also used a hash map to accelerate. This is about to analyze if this is a time constrained problem or space constrained problem, also used more algorithm abstraction.
