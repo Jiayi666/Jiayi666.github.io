@@ -32,3 +32,8 @@ The method to override the existing gazebo is [this](https://blog.csdn.net/sinat
 &nbsp;&nbsp;&nbsp;&nbsp;The default CMake will make a copy of `libcurl` when it is compiled and `SSL` is disabled by default.
 
 The way to compile CMake with SSL is [this](https://stackoverflow.com/questions/44633043/cmake-libcurl-was-built-with-ssl-disabled-https-not-supported). Remember to `make install`.
+
+### Ubuntu
+
+#### Terminal output
+1. One very interesting problem is how to dump terminal output to a file, so you can get the unlimited scrolling and fast search for error and other information. The way to do that can be found [here](collect2: error: ld returned 1 exit status)
