@@ -52,3 +52,13 @@ tags:
 &nbsp;&nbsp;&nbsp;&nbsp;The solution of this problem can be found [here](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#lists).
 
 &nbsp;&nbsp;&nbsp;&nbsp;The main problem here is to eleminate search as many as possible. In the problem, all height is interger and the coordinate is discrete, so it is efficient to only move the short side and eleminate the calculation of area with decreasing short side.
+
+#### 15. 3Sum
+&nbsp;&nbsp;&nbsp;&nbsp;This problem can be found [here](https://leetcode.com/problems/3sum/).
+
+##### How to analyze this problem
+&nbsp;&nbsp;&nbsp;&nbsp;The idea is still the same with before: **use brute force method as baseline and try to use mathematical tricks to improve**. How to find the mathematical way? It is related with how to find the **algorithm abstraction** for this problem.
+
+&nbsp;&nbsp;&nbsp;&nbsp;In this problem, a possible **algorithm abstraction** is `search` paradigm. Once we have determined two numbers, it is a search problem for us to find the possible third number.
+
+&nbsp;&nbsp;&nbsp;&nbsp;The inspiration for algorithm abstraction is the brute force method. In this problem, because in brute force way, we need to use 3 nested loop, so it is normal to think about the most inner loop where other 2 numbers have been determined.
