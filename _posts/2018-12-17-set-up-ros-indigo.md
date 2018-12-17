@@ -8,7 +8,6 @@ header-img: "img/post-bg-2015.jpg"
 catalog: 	true
 tags:
     - ROS
-    - LPR
 ---
 
 ### LPR ROS and Gazebo
@@ -16,3 +15,11 @@ tags:
 #### How to install ROS package
 
 ##### From ROS official website
+&nbsp;&nbsp;&nbsp;&nbsp;Use `apt-get install` to install ROS package. The installed package will be automatically installed to `/opt/ros/share/`, which is the defaul ROS director.
+
+&nbsp;&nbsp;&nbsp;&nbsp;In the ROS website, the display of package name and its inside is very wierd. For example, the **joystick_drivers** package is shown as `joystick_drivers:joy|ps3joy|spancenav_node|wiimote`. I have no idea what the latter part is, but if you want to install the package, just run `apt-get install ros-<ros version, such as indigo>-joystick-drivers`.
+
+### CMake
+
+#### Curl with CMake
+&nbsp;&nbsp;&nbsp;&nbsp;The default CMake will make a copy of `libcurl` when it is compiled and `SSL` is disabled by default.
