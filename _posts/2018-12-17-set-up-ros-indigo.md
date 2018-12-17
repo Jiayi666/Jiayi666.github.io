@@ -19,7 +19,16 @@ tags:
 
 &nbsp;&nbsp;&nbsp;&nbsp;In the ROS website, the display of package name and its inside is very wierd. For example, the **joystick_drivers** package is shown as `joystick_drivers:joy|ps3joy|spancenav_node|wiimote`. I have no idea what the latter part is, but if you want to install the package, just run `apt-get install ros-<ros version, such as indigo>-joystick-drivers`.
 
+#### How to install ROS when Gazebo conflict
+The gazebo version used in LPR is 6.7 and for indigo the default is gazebo 2.xx, so there will be a gazebo version conflict when you try to trinstall ROS in a lab pc. 
+
+The method to override the existing gazebo is [this](https://blog.csdn.net/sinat_34816302/article/details/79145382).
+
+`sudo aptitude install ros-indigo-desktop-full`
+
 ### CMake
 
 #### Curl with CMake
 &nbsp;&nbsp;&nbsp;&nbsp;The default CMake will make a copy of `libcurl` when it is compiled and `SSL` is disabled by default.
+
+The way to compile CMake with SSL is [this](https://stackoverflow.com/questions/44633043/cmake-libcurl-was-built-with-ssl-disabled-https-not-supported). Remember to `make install`.
