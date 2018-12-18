@@ -29,6 +29,7 @@ tags:
 #### Protobuf version conflict
 1. The problem of protobuf version conflict can be solve [here](https://github.com/BVLC/caffe/issues/6527). The main problem is 1. install version of protobuf too old. 2. packages installed by `apt-get` and from source is in different place and conflict with each other.
 2. Error like this can directly check the file that leads to the error! There will be a header showing the required version of package. See instructions [here](http://answers.gazebosim.org/question/4733/this-file-was-generated-by-an-older-version-of-protoc-while-following-gazebo-tutorial/).
+3. We can also go directly into the `CMakeCache.txt` file and vim search to quickly locate where is the packages used in cmake. This is also the case in `catkin_make`.
 
 ### CMake
 
