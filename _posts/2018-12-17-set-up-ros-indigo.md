@@ -26,6 +26,9 @@ tags:
 
 `sudo aptitude install ros-indigo-desktop-full`
 
+#### Protobuf version conflict
+The problem of protobuf version conflict can be solve [here](https://github.com/BVLC/caffe/issues/6527). The main problem is 1. install version of protobuf too old. 2. packages installed by `apt-get` and from source is in different place and conflict with each other.
+
 ### CMake
 
 #### Curl with CMake
