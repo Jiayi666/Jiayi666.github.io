@@ -34,6 +34,9 @@ tags:
 2. Error like this can directly check the file that leads to the error! There will be a header showing the required version of package. See instructions [here](http://answers.gazebosim.org/question/4733/this-file-was-generated-by-an-older-version-of-protoc-while-following-gazebo-tutorial/).
 3. We can also go directly into the `CMakeCache.txt` file and vim search to quickly locate where is the packages used in cmake. This is also the case in `catkin_make`.
 
+##### Compile Hardware first!
+In the code base for LPR, there is a `makeLinux` file needs to be executed in Hardware file first! This will compile all the hardware package for ubot.
+
 ### CMake
 
 #### Curl with CMake
