@@ -15,24 +15,27 @@ tags:
 #### How to install ROS package
 
 ##### How to uninstall ROS
-[Here](https://answers.ros.org/question/57213/how-i-completely-remove-all-ros-from-my-system/) is the instruction. Must remove ROS clearly before you start to compile everything again. The remaining from old version can hard a lot.
+[Here](https://answers.ros.org/question/57213/how-i-completely-remove-all-ros-from-my-system/) is the instruction. Must remove ROS clearly before you start to compile everything again. The remaining from old version can hard a lot. **Remember to log out**, only after log out some cached ROS setting is removed.
 
 ##### From ROS official website
 &nbsp;&nbsp;&nbsp;&nbsp;Use `apt-get install` to install ROS package. The installed package will be automatically installed to `/opt/ros/share/`, which is the defaul ROS director.
 
 &nbsp;&nbsp;&nbsp;&nbsp;In the ROS website, the display of package name and its inside is very wierd. For example, the **joystick_drivers** package is shown as `joystick_drivers:joy|ps3joy|spancenav_node|wiimote`. I have no idea what the latter part is, but if you want to install the package, just run `apt-get install ros-<ros version, such as indigo>-joystick-drivers`.
 
-#### How to install ROS when Gazebo conflict
+##### How to install ROS when Gazebo conflict
 &nbsp;&nbsp;&nbsp;&nbsp;The gazebo version used in LPR is 6.7 and for indigo the default is gazebo 2.xx, so there will be a gazebo version conflict when you try to trinstall ROS in a lab pc. 
 
 &nbsp;&nbsp;&nbsp;&nbsp;The method to override the existing gazebo is [this](https://blog.csdn.net/sinat_34816302/article/details/79145382).
 
 `sudo aptitude install ros-indigo-desktop-full`
 
-#### Protobuf version conflict
+##### Protobuf version conflict
 1. The problem of protobuf version conflict can be solve [here](https://github.com/BVLC/caffe/issues/6527). The main problem is 1. install version of protobuf too old. 2. packages installed by `apt-get` and from source is in different place and conflict with each other.
 2. Error like this can directly check the file that leads to the error! There will be a header showing the required version of package. See instructions [here](http://answers.gazebosim.org/question/4733/this-file-was-generated-by-an-older-version-of-protoc-while-following-gazebo-tutorial/).
 3. We can also go directly into the `CMakeCache.txt` file and vim search to quickly locate where is the packages used in cmake. This is also the case in `catkin_make`.
+
+##### Compile Hardware first!
+In the code base for LPR, there is a `makeLinux` file needs to be executed in Hardware file first! This will compile all the hardware package for ubot.
 
 ### CMake
 
