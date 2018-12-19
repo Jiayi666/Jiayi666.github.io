@@ -14,9 +14,6 @@ tags:
 
 #### How to install ROS package
 
-##### How to uninstall ROS
-[Here](https://answers.ros.org/question/57213/how-i-completely-remove-all-ros-from-my-system/) is the instruction. Must remove ROS clearly before you start to compile everything again. The remaining from old version can hard a lot.
-
 ##### From ROS official website
 &nbsp;&nbsp;&nbsp;&nbsp;Use `apt-get install` to install ROS package. The installed package will be automatically installed to `/opt/ros/share/`, which is the defaul ROS director.
 
