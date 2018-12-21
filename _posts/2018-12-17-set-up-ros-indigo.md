@@ -39,10 +39,18 @@ In the code base for LPR, there is a `makeLinux` file needs to be executed in Ha
 
 ### CMake
 
-#### Curl with CMake
+##### Curl with CMake
 &nbsp;&nbsp;&nbsp;&nbsp;The default CMake will make a copy of `libcurl` when it is compiled and `SSL` is disabled by default.
 
 &nbsp;&nbsp;&nbsp;&nbsp;The way to compile CMake with SSL is [this](https://stackoverflow.com/questions/44633043/cmake-libcurl-was-built-with-ssl-disabled-https-not-supported). Remember to `make install`.
+
+##### Don't uninstall CMake
+&nbsp;&nbsp;&nbsp;&nbsp;It's completely a disaster to uninstall cmake. Because the os will automatically remove some ROS related files when uninstall cmake. Apparently the os think once you uninstall cmake those file won't useful too, which is not the case.
+
+##### catkin make with `--force-cmake`
+&nbsp;&nbsp;&nbsp;&nbsp;This is a very good way to do `catkin_make`. By using `--force-cmake`, we don't need to recompile something we already compiled before, but only focus on the "new" changes.
+
+&nbsp;&nbsp;&nbsp;&nbsp;Also, sometimes when there are some conflicts in your code, just try several times of `--force-cmake`, it seems like the conflicts will be put at the end and other compilation will be solved first. And you are supposed to solve the confliction at very last of compiling. I'm even thinking maybe you can just start using the already compiled package and leave the part that has conflict along.
 
 ### Ubuntu
 
@@ -50,3 +58,5 @@ In the code base for LPR, there is a `makeLinux` file needs to be executed in Ha
 1. One very interesting problem is how to dump terminal output to a file, so you can get the unlimited scrolling and fast search for error and other information. The way to do that can be found [here](collect2: error: ld returned 1 exit status)
 2. Search in vim can based on both direction. Like shown [here](http://vim.wikia.com/wiki/Searching). Use `?` to search forward while use `/` to search backward.
 3. Use `tee` to print command output to stdout and a file a the same time. Instructions can be found [here](https://stackoverflow.com/questions/418896/how-to-redirect-output-to-a-file-and-stdout)
+
+#### Package Conflict
