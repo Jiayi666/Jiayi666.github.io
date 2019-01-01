@@ -53,4 +53,14 @@ tags:
 
 #### ROS Message
 
-&nbsp;&nbsp;&nbsp;&nbsp;ROS message is the **actual messages** being passed by ROS topics. The publisher will `pub` ROS messages to the topic. Different ROS message have different `type` and most of the type is defined specifically for this topic. To check the type of a ROS message and publish ROS message, see [this tutorial](http://wiki.ros.org/ROS/Tutorials/UnderstandingTopics).
+&nbsp;&nbsp;&nbsp;&nbsp;ROS message is the **actual messages** being passed by ROS topics. The publisher will `pub` ROS messages to the topic. Different ROS message have different `type` and most of the type is defined specifically for this topic. To check the type of a ROS message and publish ROS message, see [this tutorial](http://wiki.ros.org/ROS/Tutorials/UnderstandingTopics).、
+
+#### ROS Service
+
+&nbsp;&nbsp;&nbsp;&nbsp;ROS service is another way to provide communication between ROS nodes. Instead of only publish and subscribe, using service (server / client paradigm) the user can define more complicated **server operation** compared with ROS topic. The command for ROS service is `rosservice` and the tutorial can be found [here](http://wiki.ros.org/ROS/Tutorials/UnderstandingServicesParams).
+
+#### Parameter Server
+
+&nbsp;&nbsp;&nbsp;&nbsp;Most of the time, ROS parameter server is used to store **globally viewable parameters** such as configuration variables. Because this server is not designed to be high performance, the stored parameters should be static such as configuration parameters.
+
+&nbsp;&nbsp;&nbsp;&nbsp;By using `rosparam`, user can load or dump data into the parameter server by variable name. Tutorials can be found [here](http://wiki.ros.org/Parameter%20Server).
