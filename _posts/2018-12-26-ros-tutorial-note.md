@@ -32,6 +32,8 @@ tags:
 
 &nbsp;&nbsp;&nbsp;&nbsp;The correct way to build and install a catkin workspace with or without `catkin_make` can be found [here](http://wiki.ros.org/catkin/Tutorials/using_a_workspace).
 
+&nbsp;&nbsp;&nbsp;&nbsp;The meaning of `catkin_make` and parameters can be set is described in [here](http://wiki.ros.org/catkin/commands/catkin_make). One thing to note is that `catkin_make install` is optional, once we `source devel/setup.sh`, we can use the package **as if we have installed it**.
+
 #### ROS Package
 &nbsp;&nbsp;&nbsp;&nbsp;The most fundamental ROS software unit is a ROS package, a ROS package will contain the following files and archieve.
 
@@ -43,3 +45,12 @@ tags:
 
 &nbsp;&nbsp;&nbsp;&nbsp;[This tutorial](http://wiki.ros.org/ROS/Tutorials/CreatingPackage) here explains all files related to build and install a ROS package line by line including the `package.xml` and `CMakeList.txt` file. Reach to this tutorial for how to edit these files for building and installing ROS packages.
 
+### Ros Communication System
+
+#### ROS Topic
+
+&nbsp;&nbsp;&nbsp;&nbsp;ROS system is organized as an distributed operating system. It also contains the publish / subscribe paradigms. In ROS, the communication between nodes are not by direct message sending but by publish the information to a topic and the subscribers will know it. This may be better for asynchronous communication in ROS. For command about ROS topic, you can check [here](http://wiki.ros.org/ROS/Tutorials/UnderstandingTopics).
+
+#### ROS Message
+
+&nbsp;&nbsp;&nbsp;&nbsp;ROS message is the **actual messages** being passed by ROS topics. The publisher will `pub` ROS messages to the topic. Different ROS message have different `type` and most of the type is defined specifically for this topic. To check the type of a ROS message and publish ROS message, see [this tutorial](http://wiki.ros.org/ROS/Tutorials/UnderstandingTopics).
