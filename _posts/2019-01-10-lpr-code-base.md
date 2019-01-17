@@ -19,7 +19,7 @@ tags:
 
 ### Simulation Procedure
 
-&nbsp;&nbsp;&nbsp;&nbsp;One perfect simulation and real robot setting instruction can be found `/catkin/src/ubot/ubot_assembly/README.txt`.
+&nbsp;&nbsp;&nbsp;&nbsp;One good simulation and real robot setting instruction can be found `/catkin/src/ubot/ubot_assembly/README.txt`. Another instruction can be found in `/catkin/src/umass_mode/Readme`.
 
 ### Gazebo
 
