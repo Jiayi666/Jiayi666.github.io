@@ -13,6 +13,10 @@ tags:
     - LPR
 ---
 
+### Minimum Required System
+
+&nbsp;&nbsp;&nbsp;&nbsp;For most of our project we don't need all features built by previous lab members. To stablely lauch ubot in Gazebo, we only need `catkin_make --pkg ubot6 umass_sim_models (+ everything inside /catkin/src/third_party/gazebo_ros_pkgs, this is cloned by follow ros_setup_indigo.readme.txt)`.
+
 ### Gazebo
 
 #### Load the URDF for ubot6
@@ -22,4 +26,4 @@ tags:
 
 &nbsp;&nbsp;&nbsp;&nbsp;One problem I met when try to load the ubot6 model to gazebo is the `gzserver: double free or corruption` when launching `roslaunch ubot6 gazebo_stand.launch`.
 
-&nbsp;&nbsp;&nbsp;&nbsp;By following the above tutorial about ROS and Gazebo, I built my own simple environment with the URDF file for ubot6. By looking at the log file, I found the problem always happens at the process of building *TCP/IP connections*. In the launch file, there is a line about `urdf/gazebo_plugins/ubot6.transmissions.xacro`. After comenting this line, gazebo works ok when including the ubot6 model.
+&nbsp;&nbsp;&nbsp;&nbsp;By following the above tutorial about ROS and Gazebo, I built my own simple environment with the URDF file for ubot6. By looking at the log file, I found the problem always happens at the process of building *TCP/IP connections*. In the URDF file, there is a line about `urdf/gazebo_plugins/ubot6.transmissions.xacro`. After comenting this line, gazebo works ok when including the ubot6 model.
