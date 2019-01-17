@@ -17,6 +17,10 @@ tags:
 
 &nbsp;&nbsp;&nbsp;&nbsp;For most of our project we don't need all features built by previous lab members. To stablely lauch ubot in Gazebo, we only need `catkin_make --pkg ubot6 umass_sim_models (+ everything inside /catkin/src/third_party/gazebo_ros_pkgs, this is cloned by follow ros_setup_indigo.readme.txt)`.
 
+### Simulation Procedure
+
+&nbsp;&nbsp;&nbsp;&nbsp;One perfect simulation and real robot setting instruction can be found `/catkin/src/ubot/ubot_assembly/README.txt`.
+
 ### Gazebo
 
 #### Load the URDF for ubot6
