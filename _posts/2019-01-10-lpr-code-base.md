@@ -20,6 +20,7 @@ tags:
 ### Gazebo
 
 >[This](http://gazebosim.org/tutorials/browse) is the official tutorial for Gazebo, search for `ROS` in that page, there are a lot of ROS related tutorials.
+>Also, [this tutorial](https://www.generationrobots.com/blog/en/robotic-simulation-scenarios-with-gazebo-and-ros/#create%20a%20Gazebo%20world) go through the whole process of building and using robot models in ROS and Gazebo from completely scratch. This is very useful, gives a lot of understanding for `urdf` files, `yaml` files and all the connection behind them. The source code for the above tutorial can be found [here](https://github.com/HumaRobotics/mybot_gazebo_tutorial).
 
 #### Load the URDF for ubot6
 > Some foundamental knowledge about gazebo is important, [this tutorial](https://www.generationrobots.com/blog/en/robotic-simulation-scenarios-with-gazebo-and-ros/) is a very good start to know about the relation between ROS, Gazebo and robot models.
@@ -30,7 +31,7 @@ tags:
 
 &nbsp;&nbsp;&nbsp;&nbsp;By following the above tutorial about ROS and Gazebo, I built my own simple environment with the URDF file for ubot6. By looking at the log file, I found the problem always happens at the process of building *TCP/IP connections*. In the URDF file, there is a line about `urdf/gazebo_plugins/ubot6.transmissions.xacro`. After comenting this line, gazebo works ok when including the ubot6 model.
 
-#### Simulation Procedure
+#### Simulation Tutorials
 
 &nbsp;&nbsp;&nbsp;&nbsp;One good simulation and real robot setting instruction can be found `/catkin/src/ubot/ubot_assembly/README.txt`. Another instruction can be found in `/catkin/src/umass_mode/Readme`.
 
