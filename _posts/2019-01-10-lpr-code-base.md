@@ -42,6 +42,12 @@ tags:
 
 &nbsp;&nbsp;&nbsp;&nbsp;For how to **unpause** the simulation, check [this tutorial](http://gazebosim.org/tutorials/?tut=ros_comm). The command is `rosservice call gazebo/unpause_physics`. After using the above command, `ubot6/gui.launch` can now show robot state and control the robot.
 
-#### `rqt_graph`
+### How to debug & Learn ROS
+
+#### How to Learn a new package
+
+&nbsp;&nbsp;&nbsp;&nbsp;If possible, find the official reference or tutorial like [this](http://wiki.ros.org/joint_trajectory_controller) and also find an usage example like [this](http://wiki.ros.org/Robots/TIAGo/Tutorials/trajectory_controller). This can be very helpful for understanding, use the official tutorial as complementation for a specific usage example.
+
+#### Use `rqt_graph`
 
 &nbsp;&nbsp;&nbsp;&nbsp;Using `rqt_graph` is very convenient for analyzing the system, the command is `rosrun rqt_graph rqt_graph`.
