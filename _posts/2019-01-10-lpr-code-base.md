@@ -20,6 +20,7 @@ tags:
 ### Gazebo
 
 >[This](http://gazebosim.org/tutorials/browse) is the official tutorial for Gazebo, search for `ROS` in that page, there are a lot of ROS related tutorials.
+
 >Also, [this tutorial](https://www.generationrobots.com/blog/en/robotic-simulation-scenarios-with-gazebo-and-ros/#create%20a%20Gazebo%20world) go through the whole process of building and using robot models in ROS and Gazebo from completely scratch. This is very useful, gives a lot of understanding for `urdf` files, `yaml` files and all the connection behind them. The source code for the above tutorial can be found [here](https://github.com/HumaRobotics/mybot_gazebo_tutorial).
 
 #### Load the URDF for ubot6
