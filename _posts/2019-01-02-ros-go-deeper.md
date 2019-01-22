@@ -22,6 +22,10 @@ tags:
 * ROS message is usually passed by TCP
 * Service is synchronous and action is asynchronous
 
+### ROS IP
+
+&nbsp;&nbsp;&nbsp;&nbsp;As shown in [this](https://answers.ros.org/question/255683/gazebo-is-not-publishing-clock/) problem, if `ROS_IP` is not set in `.bashrc` file, nothing will be published includeing the `/clock` topic.
+
 
 ### Reference
 * [Learning ROS for Robotics Programming 2nd Edition](https://github.com/Jiayi666/ROSplay/blob/master/Learning%20ROS%20for%20Robotics%20Programming%20-%20Second%20Edition.pdf) : [Code and Examples](https://github.com/AaronMR/Learning_ROS_for_Robotics_Programming_2nd_edition), Python

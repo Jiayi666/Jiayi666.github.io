@@ -21,6 +21,10 @@ tags:
 
 &nbsp;&nbsp;&nbsp;&nbsp;One good simulation and real robot setting instruction can be found `/catkin/src/ubot/ubot_assembly/README.txt`. Another instruction can be found in `/catkin/src/umass_mode/Readme`.
 
+&nbsp;&nbsp;&nbsp;&nbsp;Take care, according to the file `roscd ubot6/launch/gazebo.launch` the gazebo server is start paused, detail can be find [here](http://gazebosim.org/tutorials?tut=ros_roslaunch) and [here](https://github.com/ros-simulation/gazebo_ros_pkgs/issues/291), both `-u` and `-paused` is set to pause the gzserver.
+
+&nbsp;&nbsp;&nbsp;&nbsp;For how to **unpause** the simulation, check [this tutorial](http://gazebosim.org/tutorials/?tut=ros_comm).
+
 ### Gazebo
 
 #### Load the URDF for ubot6
