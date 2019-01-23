@@ -50,9 +50,13 @@ tags:
 
 #### Use `rqt_graph`
 
-&nbsp;&nbsp;&nbsp;&nbsp;Using `rqt_graph` is very convenient for analyzing the system, the command is `rosrun rqt_graph rqt_graph`.
+&nbsp;&nbsp;&nbsp;&nbsp;Using `rqt_graph` is very convenient for analyzing the system, the command is `rosrun rqt_graph rqt_graph`. Remember to see the `Nodes/Topics (all)` mode instead of the default `Nodes Only` mode, it will show much more information.
 
-### `ros_control` package
+## Ubot Controllers
+
+### The `ros_control` packages
+
+&nbsp;&nbsp;&nbsp;&nbsp;In the launching file `ubot6 gazebo.launch`, we loaded several controllers from `ros_control` package from `.yaml` file. This is the lowest level PID controller provided by ROS. More details is shown below.
 
 #### Real Robot with `ros_control`
 
@@ -70,4 +74,12 @@ tags:
 
 #### High Level control with `ros_control`
 
+> The official reference for `ros_control` can be find [here](http://wiki.ros.org/ros_control) and for `joint_trajectory_control` can be find [here](http://wiki.ros.org/joint_trajectory_controller#Published_Topics).
+
 &nbsp;&nbsp;&nbsp;&nbsp;For now, what I need is to **send command** by `ros_control` and this should be the most frequently used feature for `ros_control`.
+
+### Controllers in LPR codebase
+
+#### The `ubot_control` package
+
+&nbsp;&nbsp;&nbsp;&nbsp;In the codebase, `ubot_control` package provided controllers including `bimanual_endpoint_controller` and `grasp_controller`. See the file `catkin_ws/src/ubot/ubot_assembly/launch/startup_task.launch` for how to load those controllers from launch file. Also see `catkin_ws/src/umass_model/Readme`, in this file follow it's instruction for start simulation, this will launch the bimanual position control from terminal. Don't forget to `rosservice call gazebo/unpause_physics` to see the simulation result.
