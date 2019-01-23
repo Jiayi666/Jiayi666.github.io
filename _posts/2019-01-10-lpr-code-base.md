@@ -51,3 +51,23 @@ tags:
 #### Use `rqt_graph`
 
 &nbsp;&nbsp;&nbsp;&nbsp;Using `rqt_graph` is very convenient for analyzing the system, the command is `rosrun rqt_graph rqt_graph`.
+
+### `ros_control` package
+
+#### Real Robot with `ros_control`
+
+&nbsp;&nbsp;&nbsp;&nbsp;[This tutorial](https://slaterobots.com/blog/5abd8a1ed4442a651de5cb5b/how-to-implement-ros_control-on-a-custom-robot) showed great instruction about how to use `ros_control` package in a real robot. `ros_control` package handles two things from that process:
+
+* receiving the goals (effort, position, velocity, trajectory, etc.)
+* running the PID controllers
+
+&nbsp;&nbsp;&nbsp;&nbsp;ros_control **doesn't** know or handle:
+
+* implementing hardware control (sending current to motors)
+* reading hardware state
+
+&nbsp;&nbsp;&nbsp;&nbsp;So, the part `ros_control` doesn't know is the **hardware interface** (hardware driver). For ubot, this part is implied by on board FPGA.
+
+#### High Level control with `ros_control`
+
+&nbsp;&nbsp;&nbsp;&nbsp;For now, what I need is to **send command** by `ros_control` and this should be the most frequently used feature for `ros_control`.
