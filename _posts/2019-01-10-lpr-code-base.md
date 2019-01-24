@@ -80,6 +80,8 @@ tags:
 
 ### Controllers in LPR codebase
 
+> In the LPR codebase, we don't need to control ubot with pure PID controller provided by `ros_control` package. Many previous student has created very useful high-level controller in `ubot_control` package.
+
 #### The `ubot_control` package
 
 &nbsp;&nbsp;&nbsp;&nbsp;In the codebase, `ubot_control` package provided controllers including `bimanual_endpoint_controller` and `grasp_controller`. See the file `catkin_ws/src/ubot/ubot_assembly/launch/startup_task.launch` for how to load those controllers from launch file. Also see `catkin_ws/src/umass_model/Readme`, in this file follow it's instruction for start simulation, this will launch the bimanual position control from terminal. Don't forget to `rosservice call gazebo/unpause_physics` to see the simulation result.
