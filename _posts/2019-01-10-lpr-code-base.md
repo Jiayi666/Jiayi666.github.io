@@ -36,6 +36,8 @@ tags:
 
 &nbsp;&nbsp;&nbsp;&nbsp;One good simulation and real robot setting instruction can be found `/catkin/src/ubot/ubot_assembly/README.txt`. Another instruction can be found in `/catkin/src/umass_mode/Readme`.
 
+&nbsp;&nbsp;&nbsp;&nbsp;For grasping, there is a tutorial in `roscd ubot_control/src/nodes/README`.
+
 #### Pause & Unpause Simulation
 
 &nbsp;&nbsp;&nbsp;&nbsp;According to the file `roscd ubot6/launch/gazebo.launch` the gazebo server is start paused, detail can be find [here](http://gazebosim.org/tutorials?tut=ros_roslaunch) and [here](https://github.com/ros-simulation/gazebo_ros_pkgs/issues/291), both `-u` and `-paused` is set to pause the gzserver.
@@ -85,3 +87,9 @@ tags:
 #### The `ubot_control` package
 
 &nbsp;&nbsp;&nbsp;&nbsp;In the codebase, `ubot_control` package provided controllers including `bimanual_endpoint_controller` and `grasp_controller`. See the file `catkin_ws/src/ubot/ubot_assembly/launch/startup_task.launch` for how to load those controllers from launch file. Also see `catkin_ws/src/umass_model/Readme`, in this file follow it's instruction for start simulation, this will launch the bimanual position control from terminal. Don't forget to `rosservice call gazebo/unpause_physics` to see the simulation result.
+
+#### Grasp controllers for ubot
+
+&nbsp;&nbsp;&nbsp;&nbsp;In `roscd umass_model/Readme`, a combination of `endpoint position controller` and `bimanual grasp controller` are used. According to the code, what it did is just *reach both hand to certain pose and* **squeeze** towards the centroid of two hands.
+
+&nbsp;&nbsp;&nbsp;&nbsp;In the package `ubot_grasp` there is a `composer.py` which should be the work left by Robert Platt which included moment residule, but I haven't figure out how to run it.
