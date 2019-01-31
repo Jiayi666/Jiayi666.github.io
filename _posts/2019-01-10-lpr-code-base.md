@@ -54,6 +54,10 @@ tags:
 
 &nbsp;&nbsp;&nbsp;&nbsp;Using `rqt_graph` is very convenient for analyzing the system, the command is `rosrun rqt_graph rqt_graph`. Remember to see the `Nodes/Topics (all)` mode instead of the default `Nodes Only` mode, it will show much more information.
 
+#### Use `rosrun tf view_frames`
+
+&nbsp;&nbsp;&nbsp;&nbsp;Run the above command can generate a pdf file for current loaded transforming network as in [this post](https://answers.ros.org/question/35908/using-tf-to-transform-a-point/).
+
 ## Ubot Controllers
 
 ### The `ros_control` packages
@@ -93,6 +97,14 @@ tags:
 &nbsp;&nbsp;&nbsp;&nbsp;In `roscd umass_model/Readme`, a combination of `endpoint position controller` and `bimanual grasp controller` are used. According to the code, what it did is just *reach both hand to certain pose and* **squeeze** towards the centroid of two hands.
 
 &nbsp;&nbsp;&nbsp;&nbsp;In the package `ubot_grasp` there is a `composer.py` which should be the work left by Robert Platt which included moment residule. In `composer.py` the idea is to take a `object centroid` as input, move hand to pre-grasp pose and *squeeze* towards the center of two hand (tare/zero the force sensor), check the control error (moment residual) and **delta**, then use `delta` to calculate new goal. I haven't figure out what `delta` is.
+
+#### The `tf` package and `force_tracker` in `ubot_grasp`
+
+&nbsp;&nbsp;&nbsp;&nbsp;The `force_tracker` node in `ubot_grasp` package is to calculate the force residual and return a `delta` for calculating new goal for grasp controller.
+
+&nbsp;&nbsp;&nbsp;&nbsp;The first problem I faced is the `PyKDL` package can't recognize the `hardwareInterface` tag in URDF file of ubot. As shown in [this page](https://github.com/ros/urdf_parser_py/issues/6), in the last response, it says the `hardwareInterface` should only be included in `joint` tag. After editing the `ubot.transmission.xaron` file, it works.
+
+&nbsp;&nbsp;&nbsp;&nbsp;The second problem is the `tf.transforPoint` methods keeps throwing exception as `ExtrapolationException: Lookup would require extrapolation into the past.`. This is caused by there is not enough time for the node to cache all the frames before it needs to make the transformation. [This page](https://answers.ros.org/question/237270/why-the-tftransformpoint-is-giving-tf-exception/) gived the solvement as adding a `sleep()` after initialized the tf listener and [here](https://answers.ros.org/question/35908/using-tf-to-transform-a-point/) gives more theoretical details.
 
 
 
