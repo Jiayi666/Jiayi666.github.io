@@ -92,4 +92,9 @@ tags:
 
 &nbsp;&nbsp;&nbsp;&nbsp;In `roscd umass_model/Readme`, a combination of `endpoint position controller` and `bimanual grasp controller` are used. According to the code, what it did is just *reach both hand to certain pose and* **squeeze** towards the centroid of two hands.
 
-&nbsp;&nbsp;&nbsp;&nbsp;In the package `ubot_grasp` there is a `composer.py` which should be the work left by Robert Platt which included moment residule, but I haven't figure out how to run it.
+&nbsp;&nbsp;&nbsp;&nbsp;In the package `ubot_grasp` there is a `composer.py` which should be the work left by Robert Platt which included moment residule. In `composer.py` the idea is to take a `object centroid` as input, move hand to pre-grasp pose and *squeeze* towards the center of two hand (tare/zero the force sensor), check the control error (moment residual) and **delta**, then use `delta` to calculate new goal. I haven't figure out what `delta` is.
+
+
+
+
+
