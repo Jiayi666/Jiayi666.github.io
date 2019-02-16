@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "LeetCode Prepare for Google - First Day"
+title:      "LeetCode Prepare for Google - Day 1"
 subtitle:   "Hash Table, Linked List, Math"
 date:       2019-02-15
 author:     "Jiayi.Liu"
