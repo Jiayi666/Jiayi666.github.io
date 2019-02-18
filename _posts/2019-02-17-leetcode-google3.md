@@ -23,12 +23,15 @@ tags:
 * (Done) Dynamic Programming
 * DFS, BFS (Recursive + Iterative)
 * String (join, replace etc.)
+* Binary Search (Search Algorithms)
 
 ### Dynamic Programming (DP)
 
 > [This tutorial](https://www.geeksforgeeks.org/solve-dynamic-programming-problem/) is great for DP. Also, check the **Algo -> Algorithm Paradigms** in this website, which concluded all programming paradigms I can use.
 
 > Think dynamically! Thinking the problem as a contineuously growing, evolving problem.
+
+> Check the **discussion** in leetcode pages, try to understand **all the ways to solve a problem!**
 
 &nbsp;&nbsp;&nbsp;&nbsp;Steps to solve a DP:
 
@@ -79,3 +82,9 @@ tags:
 &nbsp;&nbsp;&nbsp;&nbsp;[Link](https://github.com/Jiayi666/LeetCode/blob/master/Python/search-in-rotated-sorted-array.py), check [my work](https://leetcode.com/problems/search-in-rotated-sorted-array/). **Give extra care for using recursion!** What is the right time to use recursion? Overlapping subproblem? Recurssion is computational expensive.
 
 &nbsp;&nbsp;&nbsp;&nbsp;Check the process of [Quick Sort](https://www.geeksforgeeks.org/quick-sort/). Recurssion should happen when you split big problems into many subproblems. Here, we just *narrow down* the search space.
+
+#### 167 Two Sum II - Input Array is Sorted
+
+&nbsp;&nbsp;&nbsp;&nbsp;Check [this link](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/discuss/51249/Python-different-solutions-(two-pointer-dictionary-binary-search).), this problem itself isn't hard, but there are multiple ways to solve this problem. In the future, I should try to understand all these ways to solve problems.
+
+&nbsp;&nbsp;&nbsp;&nbsp;In the above link, check the **binary search** method, I didn't think in this way when I do this.
