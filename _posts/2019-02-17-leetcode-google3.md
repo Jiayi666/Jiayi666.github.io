@@ -16,6 +16,8 @@ tags:
 
 > Take care the **ending** of the iteration! See problem 122.
 
+> Be careful using recurssion, think about it's meaning and try iteration and DP. See problem 33.
+
 ### To Do 
 * (Done) Tree
 * (Done) Dynamic Programming
@@ -39,6 +41,8 @@ tags:
 &nbsp;&nbsp;&nbsp;&nbsp;The idea of DP is to find the transition between state and **solve the easy problem** (by decrising the complexity of state) then use the trasition to solve complicated problems.
 
 &nbsp;&nbsp;&nbsp;&nbsp;Also, take care about how to write code for DP. Basically, we will use a list to represent the values for multiple states.
+
+&nbsp;&nbsp;&nbsp;&nbsp;Check [this tutorial](), memoization is just **store the calculated results for each state** and reuse them when needed. So, by using memoization, we still only calculate each state once! **Think about this when you try to use recurssion.**
 
 ### Python Programming
 
@@ -69,3 +73,9 @@ tags:
 #### 122 Best Time to Buy and Sell Stock II
 
 &nbsp;&nbsp;&nbsp;&nbsp;[Link](), **take care the ending part!**
+
+#### 33 Search in Rotated Sorted Array
+
+&nbsp;&nbsp;&nbsp;&nbsp;[Link](https://github.com/Jiayi666/LeetCode/blob/master/Python/search-in-rotated-sorted-array.py), check [my work](https://leetcode.com/problems/search-in-rotated-sorted-array/). **Give extra care for using recursion!** What is the right time to use recursion? Overlapping subproblem? Recurssion is computational expensive.
+
+&nbsp;&nbsp;&nbsp;&nbsp;Check the process of [Quick Sort](https://www.geeksforgeeks.org/quick-sort/). Recurssion should happen when you split big problems into many subproblems. Here, we just *narrow down* the search space.
