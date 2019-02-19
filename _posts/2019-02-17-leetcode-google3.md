@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "LeetCode Prepare for Google - Day 3"
-subtitle:   "Hash Table, Linked List, Math"
+subtitle:   "Dynamic Programming, Tree, Recursion"
 date:       2019-02-17
 author:     "Jiayi.Liu"
 header-img: "img/post-bg-2015.jpg"
@@ -24,6 +24,7 @@ tags:
 * DFS, BFS (Recursive + Iterative)
 * String (join, replace etc.)
 * Binary Search (Search Algorithms)
+* Tree travel!
 
 ### Dynamic Programming (DP)
 
