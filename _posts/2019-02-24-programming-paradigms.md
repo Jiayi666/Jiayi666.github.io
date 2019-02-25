@@ -24,6 +24,10 @@ tags:
 
 ### BackTracking
 
+> The backtracking algorithm is basically equal to keep track of **the path in DFS**.
+
 &nbsp;&nbsp;&nbsp;&nbsp;According to [this tutorial](https://www.geeksforgeeks.org/backtracking-algorithms/), the main idea for backtracking is to **detect failure ASAP**. 
 
 &nbsp;&nbsp;&nbsp;&nbsp;In backtracking, we just recursively build/enumerate all ways that may lead to a solution and abort whenever a conflict appears. Check the [N Queen Problem](https://www.geeksforgeeks.org/n-queen-problem-backtracking-3/) and [this leetcode problem](https://leetcode.com/problems/letter-combinations-of-a-phone-number/solution/).
+
+&nbsp;&nbsp;&nbsp;&nbsp;Take a look at [this problem](https://leetcode.com/problems/permutations/discuss/18296/Simple-Python-solution-(DFS).), the implementation of backtracking is equal to **use the path from DFS**. We only add the result to the list when we are sure the result is correct.
