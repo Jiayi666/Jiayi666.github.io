@@ -21,3 +21,9 @@ tags:
 #### Binary Search
 
 &nbsp;&nbsp;&nbsp;&nbsp;Binary search is so important, it's implementation should also be carefully remembered. Check [this problem](https://www.geeksforgeeks.org/binary-search/) to see that the most efficient implementation for binary search is by **sliding window**. And the return for binary search should be one side of the window or mid.
+
+### BackTracking
+
+&nbsp;&nbsp;&nbsp;&nbsp;According to [this tutorial](https://www.geeksforgeeks.org/backtracking-algorithms/), the main idea for backtracking is to **detect failure ASAP**. 
+
+&nbsp;&nbsp;&nbsp;&nbsp;In backtracking, we just recursively build/enumerate all ways that may lead to a solution and abort whenever a conflict appears. Check the [N Queen Problem](https://www.geeksforgeeks.org/n-queen-problem-backtracking-3/) and [this leetcode problem](https://leetcode.com/problems/letter-combinations-of-a-phone-number/solution/).
