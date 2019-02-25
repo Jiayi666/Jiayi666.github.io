@@ -19,3 +19,12 @@ tags:
 ### Hash Set
 
 &nbsp;&nbsp;&nbsp;&nbsp;Hash set in python is just `set(xxx)`. Unlike hash table, hash set doesn't care what is the value for each key, it just care **if an element exists in the set**.
+
+### Heap
+
+> Python functions for creating/using heap (priority queue) is [here](https://www.geeksforgeeks.org/heap-queue-or-heapq-in-python/).
+
+&nbsp;&nbsp;&nbsp;&nbsp;Heap is a data structure good at **sorting/priority**. Heap is mainly used to represent a **priority queue** like [here](https://www.geeksforgeeks.org/heap-queue-or-heapq-in-python/). 
+
+&nbsp;&nbsp;&nbsp;&nbsp;The complexity for building a max/min heap is `O(nlogn)` while for building a binary heap is `O(n)`. See [here](https://www.geeksforgeeks.org/time-complexity-of-building-a-heap/) for more detail.
+
