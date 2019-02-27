@@ -31,3 +31,19 @@ tags:
 &nbsp;&nbsp;&nbsp;&nbsp;In backtracking, we just recursively build/enumerate all ways that may lead to a solution and abort whenever a conflict appears. Check the [N Queen Problem](https://www.geeksforgeeks.org/n-queen-problem-backtracking-3/) and [this leetcode problem](https://leetcode.com/problems/letter-combinations-of-a-phone-number/solution/).
 
 &nbsp;&nbsp;&nbsp;&nbsp;Take a look at [this problem](https://leetcode.com/problems/permutations/discuss/18296/Simple-Python-solution-(DFS).), the implementation of backtracking is equal to **use the path from DFS**. We only add the result to the list when we are sure the result is correct.
+
+### Dynamic Programming
+
+> Any recurssion algorithm should be solved with DP. The process of recurssion is just push to stack and pop latter, we can use DP to eliminate the stack operation.
+
+> [This solution](https://leetcode.com/problems/jump-game/solution/) perfectly demonstrated how to optimize a recurssive algorithm and finally get an even better algorithm than just DP.
+
+&nbsp;&nbsp;&nbsp;&nbsp;In my [previous post](https://jiayi666.github.io/2019/02/17/leetcode-google3/) and [this](https://jiayi666.github.io/2019/02/25/google11/), I described the normal process and major elements for using DP as:
+
+1.	Identify if it is a DP problem
+2.	Decide a state expression with 
+   least parameters
+3.	Formulate state relationship    
+4.	Do tabulation (or add memoization)
+
+&nbsp;&nbsp;&nbsp;&nbsp;This [problem](https://leetcode.windliang.cc/leetCode-10-Regular-Expression-Matching.html) and [this problem](https://leetcode.windliang.cc/leetCode-44-Wildcard-Matching.html) shows the use of **two dimensional DP**. In the above problem, the states are defined in two dimension and the tabular for DP is represented by an array. This described a new way of representing **hard to follow** state transitions.
