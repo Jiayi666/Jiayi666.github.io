@@ -22,9 +22,31 @@ tags:
 
 ### Heap
 
+> Because the building of max/min-heap is `O(n)`, we pop each max/min from it is `O(logn)` (to re-heapify the heap), so **heap is good at partial ordering!**
+
+> The array representation for heap is efficient, because binary heap is actually a complete tree. If the parent node is stored with index `i` then its left child has index `2*i+1` and its right child has index `2*i+2`, check [here](https://www.geeksforgeeks.org/heap-sort/).
+
 > Python functions for creating/using heap (priority queue) is [here](https://www.geeksforgeeks.org/heap-queue-or-heapq-in-python/).
 
 &nbsp;&nbsp;&nbsp;&nbsp;Heap is a data structure good at **sorting/priority**. Heap is mainly used to represent a **priority queue** like [here](https://www.geeksforgeeks.org/heap-queue-or-heapq-in-python/). 
 
-&nbsp;&nbsp;&nbsp;&nbsp;The complexity for building a max/min heap is `O(nlogn)` while for building a binary heap is `O(n)`. See [here](https://www.geeksforgeeks.org/time-complexity-of-building-a-heap/) for more detail.
+#### Build Max/Min Heap
+
+&nbsp;&nbsp;&nbsp;&nbsp;The complexity for building a max/min heap is `O(nlogn)`, but by more detailed analysis **the real time complexity is `O(n)`**. See [here](https://www.cs.bgu.ac.il/~ds122/wiki.files/Presentation09.pdf) for more detail.
+
+&nbsp;&nbsp;&nbsp;&nbsp;To check the complete process for building a max heap [here](https://www.youtube.com/watch?v=WsNQuCa_-PU&t=12s).
+
+#### Push and Pop heap
+
+&nbsp;&nbsp;&nbsp;&nbsp;According to [this solution](https://leetcode.com/problems/kth-largest-element-in-an-array/discuss/167837/Python-or-tm), even in the `heapq` module, heap is **represented with array/list**. The function `heapq.heapify(list)` is just doing heapify for the list. Then we just `heapq.heappop(list)` to pop the largest elements.
+
+#### Heap Sort
+
+> The video in [this tutorial](https://www.geeksforgeeks.org/heap-sort/) is a perfect illustration for heapsort.
+
+&nbsp;&nbsp;&nbsp;&nbsp;The key for heap sort is that **the root of max heap is always the largest number**. So, in heap sort, they just **put the root to the end of array**, and after `n` times, the array will be sorted. The complexity for heapify edited array is `logn`, so the total complexity for heap sort is `nlogn`.
+
+### Stack
+
+> Just like what we did in micro-controller, stack is very good at **store current result for future usage!** Take a look at [this problem](https://leetcode.com/problems/basic-calculator-ii/discuss/63076/Python-short-solution-with-stack.) and it will be clear.
 
