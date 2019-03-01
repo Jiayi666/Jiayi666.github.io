@@ -50,3 +50,5 @@ tags:
 
 > Just like what we did in micro-controller, stack is very good at **store current result for future usage!** Take a look at [this problem](https://leetcode.com/problems/basic-calculator-ii/discuss/63076/Python-short-solution-with-stack.) and it will be clear.
 
+&nbsp;&nbsp;&nbsp;&nbsp;According to the use of queue and stack in DFS/BFS, stack and queue is actually good for **sequential operation**. When you have decided/clear up the **sequential algorithm**, such as DFS or the above question.
+
