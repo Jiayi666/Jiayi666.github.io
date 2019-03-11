@@ -12,6 +12,10 @@ tags:
     - Data Structure
 ---
 
+### Python Basics
+
+* When we make a slice of list, **a copy of the list is made!** For example, `x=[1,2,3]; a=x[:2]; a[0]=100`, the above assignment won't change the values in `x`!
+
 ### Hash Table
 
 &nbsp;&nbsp;&nbsp;&nbsp;As in [this problem](https://leetcode.com/problems/copy-list-with-random-pointer/discuss/43485/Clear-and-short-python-O(2n)-and-O(n)-solution), hash table is actually building a **one-to-one mapping** between any two space! The key can be any object, so does the values.
@@ -24,9 +28,11 @@ tags:
 
 > Because the building of max/min-heap is `O(n)`, we pop each max/min from it is `O(logn)` (to re-heapify the heap), so **heap is good at partial ordering!**
 
-> The array representation for heap is efficient, because binary heap is actually a complete tree. If the parent node is stored with index `i` then its left child has index `2*i+1` and its right child has index `2*i+2`, check [here](https://www.geeksforgeeks.org/heap-sort/).
-
 > Python functions for creating/using heap (priority queue) is [here](https://www.geeksforgeeks.org/heap-queue-or-heapq-in-python/).
+
+#### Store a Heap
+
+&nbsp;&nbsp;&nbsp;&nbsp;The array representation for heap is efficient, because binary heap is actually a **complete tree**. So, heap can be easily stored as array in **pre-order**. If the parent node is stored with index `i` then its left child has index `2*i+1` and its right child has index `2*i+2`, check [here](https://www.geeksforgeeks.org/heap-sort/).
 
 &nbsp;&nbsp;&nbsp;&nbsp;Heap is a data structure good at **sorting/priority**. Heap is mainly used to represent a **priority queue** like [here](https://www.geeksforgeeks.org/heap-queue-or-heapq-in-python/). 
 
@@ -45,6 +51,14 @@ tags:
 > The video in [this tutorial](https://www.geeksforgeeks.org/heap-sort/) is a perfect illustration for heapsort.
 
 &nbsp;&nbsp;&nbsp;&nbsp;The key for heap sort is that **the root of max heap is always the largest number**. So, in heap sort, they just **put the root to the end of array**, and after `n` times, the array will be sorted. The complexity for heapify edited array is `logn`, so the total complexity for heap sort is `nlogn`.
+
+#### `heapq` Package
+
+* In python's `heapq` package, `heapq.heapify()` defaults to be **min-heap**.
+* `heapq.heapify(list)` **doesn't have return value!** It just heapify the input array.
+* `heapq.heappop(list)` will directly pop the root (minimum) from that list.
+* To push element to heap is `heapq.heappush(list, element)`.
+* To heapify with **key** check [here](https://stackoverflow.com/questions/7803121/in-python-heapq-heapify-doesnt-take-cmp-or-key-functions-as-arguments-like-sor). To store a tuple to heap, the first element is priority and the second is the content.
 
 ### Stack
 
