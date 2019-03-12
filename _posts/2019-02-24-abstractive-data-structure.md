@@ -16,13 +16,38 @@ tags:
 
 * When we make a slice of list, **a copy of the list is made!** For example, `x=[1,2,3]; a=x[:2]; a[0]=100`, the above assignment won't change the values in `x`!
 
-### Hash Table
+### Hashing
+
+#### Hash Table
 
 &nbsp;&nbsp;&nbsp;&nbsp;As in [this problem](https://leetcode.com/problems/copy-list-with-random-pointer/discuss/43485/Clear-and-short-python-O(2n)-and-O(n)-solution), hash table is actually building a **one-to-one mapping** between any two space! The key can be any object, so does the values.
 
-### Hash Set
+#### Hash Set
 
 &nbsp;&nbsp;&nbsp;&nbsp;Hash set in python is just `set(xxx)`. Unlike hash table, hash set doesn't care what is the value for each key, it just care **if an element exists in the set**.
+
+#### The procedure of hash table/map
+
+&nbsp;&nbsp;&nbsp;&nbsp;For insertion of a key(K) – value(V) pair into a hash map, 3 steps are required:
+
+1. K is converted into a small integer (called its hash code) using a **hash function**.
+2. The hash code is used to find an **index** (hashCode % arrSize) and the entire linked list at that index(Separate chaining) is first searched for the presence of the K already.
+3. If found, it’s value is updated and if not, the K-V pair is stored as a new node in the list.
+
+#### Collision Handling
+
+&nbsp;&nbsp;&nbsp;&nbsp;Since a hash function gets us a small number for a big key, there is possibility that two keys result in same value. The situation where a newly inserted key maps to an already occupied slot in hash table is called collision.
+
+&nbsp;&nbsp;&nbsp;&nbsp;There are two major ways to handle collisions in hashing.
+
+* Seperate Chaining (Use liked list to stored elements in collision)
+* Open Addressing (Store the collision in next empty space)
+
+#### Rehashing
+
+&nbsp;&nbsp;&nbsp;&nbsp;Rehashing happens when the **load factor** (defined as `n/b` where `n` is the number of entries and `b` is the size of matrix/array). By default, when load factor is greater than 0.75, we will do rehashing to **ensure the performance**.
+
+&nbsp;&nbsp;&nbsp;&nbsp;In rehashing, we **double** the size of the matrix. We just make a new matrix and **insert** the previous elements to the new matrix.
 
 ### Heap
 
@@ -65,4 +90,16 @@ tags:
 > Just like what we did in micro-controller, stack is very good at **store current result for future usage!** Take a look at [this problem](https://leetcode.com/problems/basic-calculator-ii/discuss/63076/Python-short-solution-with-stack.) and it will be clear.
 
 &nbsp;&nbsp;&nbsp;&nbsp;According to the use of queue and stack in DFS/BFS, stack and queue is actually good for **sequential operation**. When you have decided/clear up the **sequential algorithm**, such as DFS or the above question.
+
+### Trie
+
+> The name 'Trie' is from 're**trie**val' and read as 'try'.
+
+> The advantage of trie only appears when we try to storea and **match** sequential object and there is a limited choice of each element in each position, such as string.
+
+&nbsp;&nbsp;&nbsp;&nbsp;According to [this tutorial](https://www.geeksforgeeks.org/trie-insert-and-search/), trie can reduce the time complexity for **matching** string in BST from `O(M*logN)`, where `M` is the length of the string to be matched and `N` is the number of elements in the BST, to `O(M)`.
+
+&nbsp;&nbsp;&nbsp;&nbsp;The space complexity for trie only related with the length of the key (the length of the string to be matched) and the number of keys being stored. The branching factor is determined to the the length of the alphabet, it is 26.
+
+&nbsp;&nbsp;&nbsp;&nbsp;Check [this tutorial](https://www.geeksforgeeks.org/trie-insert-and-search/) for the insertion and search, [this tutorial](https://www.geeksforgeeks.org/trie-delete/) for deletion in trie.
 

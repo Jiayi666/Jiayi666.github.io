@@ -27,3 +27,4 @@ tags:
 > Sort while merging.
 
 &nbsp;&nbsp;&nbsp;&nbsp;First partition the list by its middle point (no comparing, just `(lo+hi)//2`). Then iteratively call merge-sort to both parts of the partition. Finally combine the two sorted part to one list.
+
