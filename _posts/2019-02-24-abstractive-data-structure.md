@@ -91,7 +91,36 @@ tags:
 
 &nbsp;&nbsp;&nbsp;&nbsp;According to the use of queue and stack in DFS/BFS, stack and queue is actually good for **sequential operation**. When you have decided/clear up the **sequential algorithm**, such as DFS or the above question.
 
-### Trie
+### Tree
+
+#### BST
+
+> The smallest item in a BST is always the left most child, the largest item in as BST is always the right most child.
+
+##### Construction of BST
+
+&nbsp;&nbsp;&nbsp;&nbsp;There are two kind of tasks when building a BST.
+
+1. Reconstruct a BST that is transformed to an array.
+2. Build a *balanced* BST from an array.
+
+&nbsp;&nbsp;&nbsp;&nbsp;The first task can be done by having **preorder traversal** of the origin BST.
+
+&nbsp;&nbsp;&nbsp;&nbsp;The second task can be done by finding the **middle value** for the sorted array and recursively do to the right and left children.
+
+##### Deletion of BST
+
+&nbsp;&nbsp;&nbsp;&nbsp;One great property for BST is it has quick insertion and deletion speed compared with other sorted data structures.
+
+&nbsp;&nbsp;&nbsp;&nbsp;There are three situations that we may encounter when deleting elements from BST:
+
+1. Deleting a node with no children: simply remove the node from the tree.
+2. Deleting a node with one child: remove the node and replace it with its child.
+3. Deleting a node with **two children**: call the node to be deleted D. 
+
+&nbsp;&nbsp;&nbsp;&nbsp;The third situation is the most complicated, check [here](https://en.wikipedia.org/wiki/Binary_search_tree#Deletion) for more detail.
+
+#### Trie
 
 > The name 'Trie' is from 're**trie**val' and read as 'try'.
 
