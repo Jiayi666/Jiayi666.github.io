@@ -83,10 +83,12 @@ tags:
 
 ### BST
 
+> Of course only work when we need a sorted data, otherwise hash table is much better.
+
 ##### Pros
 
 1. Kept a sorted data structure.
-2. Have insertion, deletion, searching complexity `O(logN)`
+2. Have insertion, deletion, searching complexity `O(logN)`.
 
 ##### Target Works
 
