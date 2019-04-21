@@ -85,6 +85,12 @@ tags:
 * To push element to heap is `heapq.heappush(list, element)`.
 * To heapify with **key** check [here](https://stackoverflow.com/questions/7803121/in-python-heapq-heapify-doesnt-take-cmp-or-key-functions-as-arguments-like-sor). To store a tuple to heap, the first element is priority and the second is the content.
 
+#### Custom Compare in `heapq`
+
+> Check [this answer](https://stackoverflow.com/questions/8875706/heapq-with-custom-compare-predicate) for defining custom comparing function in `heapq` package.
+
+- Just **put the target critieria as the first element** and it will be used for sorting.
+
 ### Stack
 
 > Just like what we did in micro-controller, stack is very good at **store current result for future usage!** Take a look at [this problem](https://leetcode.com/problems/basic-calculator-ii/discuss/63076/Python-short-solution-with-stack.) and it will be clear.
