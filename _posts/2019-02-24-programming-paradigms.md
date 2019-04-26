@@ -12,6 +12,8 @@ tags:
     - Data Structure
 ---
 
+> Analyzing your algorithm with **online/offline** ande **stable/unstable** operation. Check [this answer](https://leetcode.com/problems/k-closest-points-to-origin/discuss/220235/Java-Three-solutions-to-this-classical-K-th-problem.) that using global sort is an offline algorithm because it needs to know all the values for the operation but max-heap is an online method since it can use heapify to insert new items.
+
 ### Devide and Conquer
 
 &nbsp;&nbsp;&nbsp;&nbsp;By looking at algorithms for Merge Sort, Quick Sort and [Closest pair of points](https://en.wikipedia.org/wiki/Closest_pair_of_points_problem), the major advantage/drive for using devide and conquer is actually to **save the apparently unnecessary search**. In algorithm from the above link, we eliminated the search between points that has more than one split lines between them.

@@ -63,13 +63,13 @@ tags:
 
 #### Build Max/Min Heap
 
-&nbsp;&nbsp;&nbsp;&nbsp;The complexity for building a max/min heap is `O(nlogn)`, but by more detailed analysis **the real time complexity is `O(n)`**. See [here](https://www.cs.bgu.ac.il/~ds122/wiki.files/Presentation09.pdf) for more detail.
+&nbsp;&nbsp;&nbsp;&nbsp;The complexity for building a max/min heap is `O(nlogn)`, but by more detailed analysis **the real time complexity is `O(n)`**. See [here](https://www.cs.bgu.ac.il/~ds122/wiki.files/Presentation09.pdf) for more detail (easily explain is **not all nodes have depth `logN`**).
 
 &nbsp;&nbsp;&nbsp;&nbsp;To check the complete process for building a max heap [here](https://www.youtube.com/watch?v=WsNQuCa_-PU&t=12s).
 
 #### Push and Pop heap
 
-&nbsp;&nbsp;&nbsp;&nbsp;According to [this solution](https://leetcode.com/problems/kth-largest-element-in-an-array/discuss/167837/Python-or-tm), even in the `heapq` module, heap is **represented with array/list**. The function `heapq.heapify(list)` is just doing heapify for the list. Then we just `heapq.heappop(list)` to pop the largest elements.
+&nbsp;&nbsp;&nbsp;&nbsp;According to [this solution](https://leetcode.com/problems/kth-largest-element-in-an-array/discuss/167837/Python-or-tm), even in the `heapq` module, heap is **represented with array/list**. The function `heapq.heapify(list)` is just doing heapify for the list. Then we just `heapq.heappop(list)` to pop the largest elements *and do heapify again*, so it's still a heap after `heapq.heappop()`.
 
 #### Heap Sort
 
