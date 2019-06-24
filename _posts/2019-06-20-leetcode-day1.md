@@ -14,6 +14,8 @@ tags:
 
 > Analyze programming problems like physical problems! Data Structure is the **model**, the methods (operations) we can do on this data structure is the **dynamics**.
 
+> We may should always analyze programming problem as **sequence of states**, which is exactly how program works. And only the ones that the current state is based on previous state, dynamic programming should be considered.
+
 ### Java Programming
 
 - `int minVal = Integer.MIN_VALUE` is the way to assign an integer with the minimum value in Java Integer class. `Integer.MAX_VALUE` is for maximum value.
@@ -25,6 +27,6 @@ tags:
 
 ### Interesting Problems
 
-#### 53. Maximum Subarray
+#### 51. N-Queens
 
-&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Using `x+y` and `x-y` to process **lines in array** is a normal idea in array operations! Must practice and keep aware of this.
