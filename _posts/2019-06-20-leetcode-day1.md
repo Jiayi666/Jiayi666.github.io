@@ -30,3 +30,22 @@ tags:
 #### 51. N-Queens
 
 &nbsp;&nbsp;&nbsp;&nbsp;Using `x+y` and `x-y` to process **lines in array** is a normal idea in array operations! Must practice and keep aware of this.
+
+#### 55. Jump Game
+
+&nbsp;&nbsp;&nbsp;&nbsp;Just to write down it again: Top-Down dynamic programming is called **memoization**, it reason is to **memorize** information that can be used by **each state** (a little bit like Markov property, the information is only related with the state itself, not about how we get to that state.)
+
+&nbsp;&nbsp;&nbsp;&nbsp;The Bottom-Up dynamic programming is called **Tabulation** which should be understood as building up a table directed by the **recursive relation** between states.
+
+#### 60. Permutation Sequence
+
+&nbsp;&nbsp;&nbsp;&nbsp;Always **try several examples!** In this problem, `k-=1` is the key, it is easy to see if you try to run your code in several easy (especially **initial cases**).
+
+#### 61. Rotate List
+
+&nbsp;&nbsp;&nbsp;&nbsp;There are two ways of thinking about a programming problem. The first is to follow the problem **step by step**. The second is by observing the start and end to analyzing the influence of **a bunch of operations**.
+
+&nbsp;&nbsp;&nbsp;&nbsp;In this problem, step by step solution means actually rotate the linked list `k` times. Observing start and end means rotate the linked list by the pivot! This also reminds the importance of actually **try some examples**!
+
+
+
