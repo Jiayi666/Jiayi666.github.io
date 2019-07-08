@@ -8,8 +8,6 @@ header-img: "img/post-bg-2015.jpg"
 catalog: 	true
 tags:
     - LeetCode
-    - Algorithm
-    - Data Structure
 ---
 
 > Analyze programming problems like physical problems! Data Structure is the **model**, the methods (operations) we can do on this data structure is the **dynamics**.
@@ -47,5 +45,7 @@ tags:
 
 &nbsp;&nbsp;&nbsp;&nbsp;In this problem, step by step solution means actually rotate the linked list `k` times. Observing start and end means rotate the linked list by the pivot! This also reminds the importance of actually **try some examples**!
 
+#### 975. Odd Even Jump
 
+&nbsp;&nbsp;&nbsp;&nbsp;A hard level problem is normally containing **more than one layer**. For example, in this problem, using dynamic programming is easy to get but this isn't the end! It just **reudced the problem** to another problem needs to be solved.
 
