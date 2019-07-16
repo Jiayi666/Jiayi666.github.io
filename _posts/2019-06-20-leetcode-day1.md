@@ -10,6 +10,8 @@ tags:
     - LeetCode
 ---
 
+> Do check **leetcode articles** for deeper understanding of problems! Many articles are really well made.
+
 > Analyze programming problems like physical problems! Data Structure is the **model**, the methods (operations) we can do on this data structure is the **dynamics**.
 
 > We may should always analyze programming problem as **sequence of states**, which is exactly how program works. And only the ones that the current state is based on previous state, dynamic programming should be considered.
@@ -49,3 +51,18 @@ tags:
 
 &nbsp;&nbsp;&nbsp;&nbsp;A hard level problem is normally containing **more than one layer**. For example, in this problem, using dynamic programming is easy to get but this isn't the end! It just **reudced the problem** to another problem needs to be solved.
 
+#### 907. Sum of Subarray Minimums
+
+> Take a look at [this article](https://leetcode.com/articles/sum-of-subarray-minimums/) about how to solve this problem.
+
+> Caring about **hills** in an array is where stack can really be useful. This is called **increasing stack**.
+
+&nbsp;&nbsp;&nbsp;&nbsp;The idea of using stack to find **monotonic properties** within an array is brilliant. Using stack, we can eliminate many *redundant operations (based on the monotonic property)*.
+
+&nbsp;&nbsp;&nbsp;&nbsp;Considering that our task is to find the smallest index `i <= j` for which `A[i], A[i+1], ..., A[j] are all >= A[j]`. So, our focus should be the first leftside element that is smaller than `A[j]`. As a result, we can only care about **down going hills**! Caring about **hills** in an array is the most commom senario we can leverate a stack.
+
+> [This tutorial](https://leetcode.com/problems/sum-of-subarray-minimums/discuss/170750/C++JavaPython-Stack-Solution) gives pretty good analysis from instinct to how we can solve the problem.
+
+&nbsp;&nbsp;&nbsp;&nbsp;One of the most important thing to think for programming problems is **what is used with repeatition!** Here, every subarray is just used once, but every elements is used multiple times (in different subarraies). As a result, the instinct should be *go through the element just once*.
+
+&nbsp;&nbsp;&nbsp;&nbsp;Also, when we are talking about **potential of improvement**, no matter if the first impression is to go through the elements or the subarraies, it is clear that go through all the subarries has no room for improvement because itself is already a `O(N^2)` operation.

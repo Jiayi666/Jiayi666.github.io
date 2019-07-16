@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "Python3 Type Hints"
-subtitle:   "New Features from Python3"
+title:      "Python3 Go Deeper"
+subtitle:   "Typing (type hints), Generator"
 date:       2019-07-08
 author:     "Jiayi.Liu"
 header-img: "img/post-bg-2015.jpg"
