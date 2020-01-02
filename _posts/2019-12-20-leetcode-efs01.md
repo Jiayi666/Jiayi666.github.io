@@ -27,6 +27,28 @@ tags:
 
 ##### 837. New 21 Game
 
+> The purpose of DP is **reduce duplicated** calculations! So, once you noticed duplicated calculation in your algorithm, try to use DP.
+
 &nbsp;&nbsp;&nbsp;&nbsp;Thinking the brute-force method can really help us understand the problem. For this problem, the brute-force method takes exponential complexity and DP is a easily found better solution.
 
 &nbsp;&nbsp;&nbsp;&nbsp;We can learn a trick from this problem : if we want to sum over an array, it can be simplified as `sum(m::n) = sum(1::n) - sum(1::m)`. This is especially usefull with DP.
+
+##### 742. Closest Leaf in a Binary Tree
+
+&nbsp;&nbsp;&nbsp;&nbsp;When we face the case we need to *go backward* in a tree, *change it to a graph* can be a good idea. Because the action of going backward basically breaked the meaning of a tree structure, thus we can expand a tree to a more abstract structure that still preserved the relation between nodes.
+
+&nbsp;&nbsp;&nbsp;&nbsp;Changing a tree representation to a graph breaks the *parent-children* relationship in tree. The *parent-children* relation can be constrains and also helpers. For example, when we search for the longest path from leaf to leaf, we can use the parent-children relation as a hint and use DP!
+
+##### 373. Find K Pairs with Smallest Sums
+
+&nbsp;&nbsp;&nbsp;&nbsp;For this question, it can be super helpful if you think about representing the result with matrix. But even if you don't, you can still do something to **minimize the cost** such as only consider the *first k element in both arrays*.
+
+##### 1182. Shortest Distance to Target Color
+
+&nbsp;&nbsp;&nbsp;&nbsp;This is a typical searching problem, and even the brute-force searching looks ok we may be able to improve that. The key of searching is to see **what is the critieria we are searching for** and **how we can get rid of candidates ASAP**. Using critieria as index is a good idea to get rid of candidates.
+
+##### 1261. Find Elements in a Contaminated Binary Tree
+
+&nbsp;&nbsp;&nbsp;&nbsp;In this problem we can see that we always have different ways of optimizing. Here we can calculate the path from root to the node which will cause `O(logN)` time complexity and `O(1)` extra memory. However, if we want to optimize for find latency, we can always use a set to store all nodes value.
+
+&nbsp;&nbsp;&nbsp;&nbsp;Another point needs to learn from this problem is **make sure you understand what option is needed**, for example 'find existance', 'search with critieria' etc.
