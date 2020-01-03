@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "LeetCode EFS 01"
+title:      "LeetCode EFS"
 subtitle:   ""
 date:       2019-12-20
 author:     "Jiayi.Liu"
@@ -52,3 +52,7 @@ tags:
 &nbsp;&nbsp;&nbsp;&nbsp;In this problem we can see that we always have different ways of optimizing. Here we can calculate the path from root to the node which will cause `O(logN)` time complexity and `O(1)` extra memory. However, if we want to optimize for find latency, we can always use a set to store all nodes value.
 
 &nbsp;&nbsp;&nbsp;&nbsp;Another point needs to learn from this problem is **make sure you understand what option is needed**, for example 'find existance', 'search with critieria' etc.
+
+##### 1130. Minimum Cost Tree From Leaf Values
+
+&nbsp;&nbsp;&nbsp;&nbsp;[This solution](https://leetcode.com/problems/minimum-cost-tree-from-leaf-values/discuss/340004/Python-Easy-DP) is a typical **divide & conquer** method! If the result of mother problem can be divided into result of smaller problem, we should consider both **DP** and **divide & conqure**.
