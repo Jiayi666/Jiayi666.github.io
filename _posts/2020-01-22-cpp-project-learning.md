@@ -20,10 +20,12 @@ tags:
 
 #### Terms
 
-- POD type : A Plain Old Data Structure in C++ is an aggregate class that contains only PODS as members, has no user-defined destructor, no user-defined copy assignment operator, and no nonstatic members of pointer-to-member type. See [this question](https://stackoverflow.com/questions/146452/what-are-pod-types-in-c) for more details.
+- POD type : A Plain Old Data Structure in C++ is an aggregate class that contains only PODS as members, has no user-defined destructor, no user-defined copy assignment operator, and no nonstatic members of pointer-to-member type. A struct with no modifiers or methods is called a POD struct, which exists as a backwards compatible interface with C libraries as it is (supposedly) guaranteed to be laid out as though it were a C struct. See [this question](https://stackoverflow.com/questions/146452/what-are-pod-types-in-c) for more details. A `struct` is normally a POD type.
 
 #### Memory Allocation
 
 > `memset` vs `new` vs `malloc` !
 
-&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;`malloc` and `new` can actually allocate new memory space but `memset` can't. `memset` can only assign value for every byte in a memory space, most likely it will assign 0s.
+
+&nbsp;&nbsp;&nbsp;&nbsp;The difference between `malloc` and `new` is that `malloc` **won't invoke constructor and destructor**. So, `malloc` is mostly for POD types while `new` is for C++ style types.
