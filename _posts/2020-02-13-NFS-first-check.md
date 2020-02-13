@@ -36,4 +36,24 @@ tags:
 
 ### Linux NFS
 
+#### What is NFS
+
+> [NFS Intro Slides](http://www.cs.fsu.edu/~langley/CNT4603-2009-Spring/08-nfs.pdf)
+
+> [EFS how to use page](https://aws.amazon.com/getting-started/tutorials/create-network-file-system/)
+
+&nbsp;&nbsp;&nbsp;&nbsp;Linux Network File System (NFS) is the most widely used network-based file system. The AWS EFS is similar to NFS by using the **client-server** design.
+
+#### Linux Implementation for NFS
+
+> [Linux NFS Project Page](http://wiki.linux-nfs.org/wiki/index.php/Main_Page)
+
+> [Linux NFS code](https://github.com/torvalds/linux/tree/master/fs/nfs)
+
 > [Arch NFS](https://wiki.archlinux.org/index.php/NFS)
+
+#### Features Worth Care in NFS
+
+> [NFSv4 Paper](https://www.kernel.org/doc/ols/2001/nfsv4_ols.pdf)
+
+> [Oracle File Storage Service (FSS) for Oracle Cloud Paper](https://www.usenix.org/system/files/atc19-kuszmaul.pdf)
