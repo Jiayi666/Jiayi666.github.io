@@ -11,6 +11,14 @@ tags:
     - Library
 ---
 
+### Learning Plan
+1. *[Basic Knowledge]* Learn about basic concepts mentioned in [SYSTEM DESIGN PREPARATION](https://www.educative.io/path/scalability-system-design)
+   1. Distributed System
+   2. Network programming
+   3. Concurrency
+   4. Database
+   5. Web Archtecture
+
 ### Resources
 * **[BOOK]** [Grok System Design Interview](https://github.com/Jiayi666/grok_sdi_educative/blob/master/grok_system_design_interview.pdf) : A step by step introduction for SDI (system design interview). Also, has a bunch of example questions, good material for preparing SDI.
 * **[BOOK]** [Design Data-Intensive Applications](https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/) : Focused on "data" related system design, including content such as data abstraction & storage etc. Not for beginner, but goes quite depth.
