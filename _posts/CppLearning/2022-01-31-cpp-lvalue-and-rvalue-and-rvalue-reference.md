@@ -40,3 +40,17 @@ It is possible that a class has only implemented the "move" constructor then whe
 ##### How To Get rvalue Reference 
 C++11 introduced `std::move` just to transform a lvalue to rvalue. It is basically recommended to use `std::move` whenever you can.
 
+### Universal Reference
+> References declared with `&&` that may be either lvalue references or rvalue references may bind to anything. Such unusually flexible references deserve their own name, which is called universal references.
+
+
+### Perfect Forwarding
+> In [Thomas Becker's tutorial](http://thbecker.net/articles/rvalue_references/section_07.html), the problem for perfect forwarding has been raised.
+
+To achieve perfect forwarding, the function should
+
+1. Does not make copy of the input arguments (should take reference as input) if it does not have to
+2. Can take both rvalue reference and lvalue reference as input 
+3. The solution should scale well with multiple arguments (we don't want to create overload for all const & non-const reference combinations)
+4. Allow move semantics (the internal view of the passed argument can be rvalue reference)
+
