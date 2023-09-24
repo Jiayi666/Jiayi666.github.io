@@ -79,7 +79,8 @@ To optimize a problem, the most important thing is to understand **WHAT YOU CAN 
 As a result, we do not require strong durability or consistency for the counter so the following optimizations can be considered
 
 1. Use memory-cached centralized storage such as [Redis](https://redis.io/) which flush in-memory data to disk periodically but for all customer I/O it serve directly from memory
-2. Leverage geometric distribution of Redis servers to minimize network cost for rate limiter
+2. Allow rate limiter to do "read + atomic increase" instead of a CAS because a CAS is very likely to fail under high IOPS scenario
+3. Leverage geometric distribution of Redis servers to minimize network cost for rate limiter
 
 ## Close The Loop
 
